@@ -1,0 +1,9 @@
+/*
+!*.tex
+!.gitignore
+!README.md
+!/img/
+!/img/*
+!/sources/
+/sources/*
+!/sources/*.odg
