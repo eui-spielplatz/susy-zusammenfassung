@@ -27,28 +27,59 @@
 	\section{Signale und Systeme}
 	\fancythumb{S\&S}{teal}
 	\subsection{Signal}
-	Ein Signal ist eine Funktion x(t). Sie liefert für jedes Funktionsargument t ein ein Funktionswert x(t).
+	Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsargument $t$ ein ein Funktionswert $x(t)$.
 	\subsection{Klassifikation von Signalen}
 	\begin{itemize}
-	\item gerade/ungerade
-	\item real/imaginär/komplex
-	\item periodisch/nicht periodisch
-	\item einkanalig
-	\item mehrkanalig
-	\item eindimensional
-	\item mehrdimensional
-	\item zeitkontinuierlich
-	\item zeitdiskret
-	\item wertkontinuierlich
-	\item wertdiskret
-	\item analog
-	\item digital
+	\item \textbf{gerade/ungerade}: $x(t)=x_g(t)+x_u(t)$, wobei $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$
+	\item \textbf{reell/imaginär/komplex}: $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$, wobei $x^*(t)$ komplex konjugiert zu $x(t)$, Realteil: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und Imaginärteil: $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$ 
+	\item \textbf{periodisch}: es existiert $T$, sodass $x(t+T)=x(t)$ für alle $t$; Kleinstes $T$ heißt dann Periode
+	\item \textbf{einkanalig}: ein Funktionswert, z.B. $x(t)$
+	\item \textbf{mehrkanalig}: mehrere Funktionswerte, z.B. $\begin{bmatrix}
+	x_1(t) \\ 
+	x_2(t)
+	\end{bmatrix}$
+	\item \textbf{eindimensional}: ein Funktionsargument, z.B. $x(t)$
+	\item \textbf{mehrdimensional}:mehrere Funktionsargumente, z.B. $x(t,x,y)$
+	\item \textbf{zeitkontinuierlich}: zeitkontinuierliches Funktionsargument, $x(t)$ mit $t element R$
+	\item \textbf{zeitdiskret}: zeitdiskretes Funktionsargument, $x(n)$ mit $n element Z$
+	\item \textbf{wertkontinuierlich}: kontinuierlicher Funktionswert
+	\item \textbf{wertdiskret}: diskreter Funktionswert
+	\item \textbf{analog}: zeitkontinuierliche und wertkontinuierlich
+	\item \textbf{digital}: zeitdiskret und wertdiskret
 	\end{itemize}
 	\subsection{Zeitkontinuierliche Signale}
+	\begin{itemize}
+	\item Sprungfunktion
+	\item Vorzeichenfunktion
+	\item Rechteckfunktion
+	\item Reelles oder komplexes Sinussignal
+	\item Exponentialsignal
+	\item verschobenes Rechteck
+	\item Dreieck
+	\end{itemize}
 	\subsection{Zeitdiskrete Signale}
+	\begin{itemize}
+	\item Sprungfunktion
+	\item Vorzeichenfunktion
+	\item Rechteckfunktion
+	\item Reelles oder komplexes Sinussignal
+	\item Exponentialsignal
+	\end{itemize}
 	\subsection{System}
+	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
 	\subsection{Klassifikation von Systemen}
+	\begin{itemize}
+	\item Gedächtnis
+	\item Kausalität
+	\item Zeitvarianz
+	\item Linearität
+	\item BIBO-Stabilität
+	\end{itemize}
 	\subsection{Parallel- und Kettenschaltung von Systemen}
+	\begin{itemize}
+	\item \textbf{Parallelschaltung} $y(t)=T_1(x(t))+T_2(x(t))+...+T_N(x(t))$
+	\item \textbf{Kettenschaltung} 	$y(t)=T_N(...T_2(T_1(x(t)))...)$
+	\end{itemize}
 	\newpage
 	\section{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
 	\fancythumb{ZK-t}{red}
