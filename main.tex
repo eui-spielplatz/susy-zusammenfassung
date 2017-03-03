@@ -1,0 +1,47 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
+\usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
+\usepackage[german]{babel}
+\author{Florian Euchner, Stefan Köbel, Chong Shen, Jan Frederik Dick}
+
+\newcommand{\fancythumb}[2]{
+	\addthumb{#1}{\large\sffamily\textbf{\space\space#1\vspace{5pt}}}{white}{#2}
+}
+
+\newcommand{\fancyformula}[2]{
+	\small
+	\raggedright\sffamily\textbf{#1}
+	#2
+}
+
+\pagenumbering{arabic}
+
+\begin{document}
+	\section{Signale und Systeme}
+	\fancythumb{S\&S}{teal}
+	\newpage
+	\section{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
+	\fancythumb{ZK-t}{red}
+	\newpage
+	\section{Zeitdiskrete LTI-Systeme im Zeitbereich}
+	\fancythumb{ZD-t}{magenta}
+	\newpage
+	\section{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
+	\fancythumb{ZK-f}{blue}
+	\newpage
+	\section{Zeitdiskrete LTI-Systeme im Frequenzbereich}
+	\fancythumb{ZD-f}{violet}
+	\newpage
+	\section{Analyse von Signalen und LTI-Systemen in der komplexen Ebene}
+	\fancythumb{$\mathbb{C}$}{olive}
+	\newpage
+	\section{Allgemeinere Signale und Systeme}
+	\fancythumb{Allg. S\&S}{black}
+\end{document}
