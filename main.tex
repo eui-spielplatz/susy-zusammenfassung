@@ -90,7 +90,7 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \subsection*{Lineare Differenzengleichungen mit konstanten Koeffizienten}
 \begin{tabular}{r p{12cm}}
 	\textbf{DGL} & $\alpha(D) ~ y(n) = \beta(D) ~ x(n)$, wobei $D^k(y) = y(n-k)$ und $\alpha$, $\beta$ Polynome vom Grad N bzw. M \\
-	\textbf{Eingangssignal} & $x(n) = A ~ q^n$, welches zum Zeitpunkt $n = 0$ einsetzt \\
+	\textbf{Eingangssignal} & $x(n) = u(n) ~ A ~ q^n$ \\
 	\textbf{Anfangswerte} & $y(-1)$, …, $y(-N)$ und (wenn nicht aus $x(n)$ ersichtlich) $x(-1)$, …, $x(-M)$ \\
 	\textbf{Lösung} & Funktion $y(n)$ für $n \geq 0$, die DGL für Eingangssignal erfüllt. $y(n)$ muss nicht die Anfangsbedingungen erfüllen, da $n \geq 0$
 \end{tabular}
@@ -109,7 +109,7 @@ Bestimme $y_h(n)$, sodass $\alpha(D) ~ y_h(n) = 0 ~ \forall n \in \mathbb Z$. Be
 \]
 
 \subsubsection*{Partikuläre Lösung $y_p$}
-Bestimme ein $y_p(n)$ so, dass $\alpha(D) ~ y_p(n) = \beta(D) ~ x(n) ~ \forall n \geq 0$ für ein spezifisches $x(n) = A ~ q^n, n \geq 0$.
+Bestimme ein $y_p(n)$ so, dass $\alpha(D) ~ y_p(n) = \beta(D) ~ x(n) ~ \forall n \geq 0$ für ein spezifisches $x(n) = u(n) ~ A ~ q^n, n \geq 0$.
 
 \paragraph{q keine Nullstelle von $\alpha \Leftrightarrow q \neq z_i ~ \forall i$}
 \[
@@ -129,6 +129,33 @@ Um die Anfangswerte zu berücksichtigen, müssen Koeffizienten $c_1, …, c_N$ b
 \vspace{.5em}
 \raggedright
 \textbf{Warnung:} \textit{Nicht} die Koeffizienten durch Lösen von $y(-1) = y(n)$ für $n = -1$ etc. bestimmen - das wird falsch, denn $y(n)$ ist für $n < 0$ keine Lösung, da $y_p$ dann keine Lösung!
+
+\subsubsection*{Impulsantwort $h$}
+Für Anfangsbedingungen gilt $y(-1) = … = y(-N) = 0$.
+\paragraph{Für $N > M$:} Es ist klar, dass $\alpha(D) ~ y_h(n) = 0 ~ \forall n \in \mathbb Z$ für beliebige Koeffizienten $c$. Nun wird das System mit der Impulsfunktion 
+\[
+	\delta(n) =
+	\begin{cases}
+		1 & \textnormal{für } n = 0 \\
+		0 & \textnormal{sonst}
+	\end{cases}
+\]
+angeregt. Für $n > M$ ist die Differenzengleichung also homogen, da auf der rechten Seite $x(n) = \delta(n)$ höchstens in der $M$-ten Verzögerung $D^M ~ x(n) = \delta(n - M) = 0$ steht.
+
+\vspace{.5em}
+Ansatz: Impulsantwort $h(n) = y(n) = u(n) ~ y_h(n)$ stimmt schon für $n > M$, bestimmte Koeffizienten so, dass $h(n)$ auch für $n = 0, …, M$ passt. Berechne LGS durch Einsetzen von $y(n)$, $x(n) = \delta(n)$ in DGL für $n = 0, …, N$ mit $N$ Gleichungen und den $N$ unbekannten Koeffizienten $c$.
+
+\[
+	h(n) = u(n) ~ y_h(n) ~~ \textnormal{…mit den durch LGS bestimmten Koeffizienten $c$}
+\]
+
+\paragraph{Sonst:} Setze Eingangssignal $x(n) = u(n) ~ A ~ q^n$ zu $A = q = 1$, sodass $x(n) = u(n)$. Bestimme allgemeine Lösung der DGL mit diesem Eingangssignal, Lösung ist Sprungantwort $a(n) = y(n)$.
+
+\vspace{.5em}
+Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $T$ und $T(\delta(n)) = T(u(n) - u(n - 1))$:
+\[
+	h(n) = a(n) - a(n-1)
+\]
 
 \newpage
 \section*{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
