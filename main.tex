@@ -1,10 +1,11 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{titlesec}
 \usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{color}
 \usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
@@ -16,13 +17,16 @@
 }
 
 \pagenumbering{arabic}
+\titleformat*{\section}{\sffamily\huge\bfseries}
+\titleformat*{\subsection}{\sffamily\Large\bfseries}
+\titleformat*{\subsubsection}{\sffamily\large\bfseries}
 
 \begin{document}
-\section{Signale und Systeme}
+\section*{Signale und Systeme}
 \fancythumb{S\&S}{teal}
-\subsection{Signal}
+\subsection*{Signal}
 Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsargument $t$ einen Funktionswert $x(t)$.
-\subsection{Klassifikation von Signalen}
+\subsection*{Klassifikation von Signalen}
 \begin{itemize}
 	\item \textbf{gerade/ungerade}: $x(t)=x_g(t)+x_u(t)$, wobei $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$
 	\item \textbf{reell/imaginär/komplex}: $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$, wobei $x^*(t)$ komplex konjugiert zu $x(t)$, Realteil: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und Imaginärteil: $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$ 
@@ -42,7 +46,7 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\item \textbf{analog}: zeitkontinuierliche und wertkontinuierlich
 	\item \textbf{digital}: zeitdiskret und wertdiskret
 \end{itemize}
-\subsection{Zeitkontinuierliche Signale}
+\subsection*{Zeitkontinuierliche Signale}
 \begin{itemize}
 	\item Sprungfunktion
 	\item Vorzeichenfunktion
@@ -52,7 +56,7 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\item verschobenes Rechteck
 	\item Dreieck
 \end{itemize}
-\subsection{Zeitdiskrete Signale}
+\subsection*{Zeitdiskrete Signale}
 \begin{itemize}
 	\item Sprungfunktion
 	\item Vorzeichenfunktion
@@ -60,9 +64,9 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\item Reelles oder komplexes Sinussignal
 	\item Exponentialsignal
 \end{itemize}
-\subsection{System}
+\subsection*{System}
 	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
-\subsection{Klassifikation von Systemen}
+\subsection*{Klassifikation von Systemen}
 \begin{itemize}
 	\item Gedächtnis
 	\item Kausalität
@@ -70,33 +74,33 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\item Linearität
 	\item BIBO-Stabilität
 \end{itemize}
-\subsection{Parallel- und Kettenschaltung von Systemen}
+\subsection*{Parallel- und Kettenschaltung von Systemen}
 \begin{itemize}
 	\item \textbf{Parallelschaltung} $y(t)=T_1(x(t))+T_2(x(t))+...+T_N(x(t))$
 	\item \textbf{Kettenschaltung} 	$y(t)=T_N(...T_2(T_1(x(t)))...)$
 \end{itemize}
 
 \newpage
-\section{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
+\section*{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
 \fancythumb{ZK-t}{red}
 
 \newpage
-\section{Zeitdiskrete LTI-Systeme im Zeitbereich}
+\section*{Zeitdiskrete LTI-Systeme im Zeitbereich}
 \fancythumb{ZD-t}{magenta}
 
 \newpage
-\section{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
+\section*{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
 \fancythumb{ZK-f}{blue}
 
 \newpage
-\section{Zeitdiskrete LTI-Systeme im Frequenzbereich}
+\section*{Zeitdiskrete LTI-Systeme im Frequenzbereich}
 \fancythumb{ZD-f}{violet}
 
 \newpage
-\section{Analyse von Signalen und LTI-Systemen in der komplexen Ebene}
+\section*{Analyse von Signalen und LTI-Systemen in der komplexen Ebene}
 \fancythumb{$\mathbb{C}$}{olive}
 
 \newpage
-\section{Allgemeinere Signale und Systeme}
+\section*{Allgemeinere Signale und Systeme}
 \fancythumb{Allg. S\&S}{black}
 \end{document}
