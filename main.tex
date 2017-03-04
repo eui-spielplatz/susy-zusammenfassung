@@ -1,5 +1,5 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -9,7 +9,7 @@
 \usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
 \usepackage[german]{babel}
-\author{Florian Euchner, Stefan Kˆbel, Chong Shen, Jan Frederik Dick}
+\author{Florian Euchner, Stefan K√∂bel, Chong Shen, Jan Frederik Dick}
 
 \newcommand{\fancythumb}[2]{
 	\addthumb{#1}{\large\sffamily\textbf{\space\space#1\vspace{5pt}}}{white}{#2}
@@ -27,12 +27,12 @@
 	\section{Signale und Systeme}
 	\fancythumb{S\&S}{teal}
 	\subsection{Signal}
-	Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert f¸r jedes Funktionsargument $t$ ein ein Funktionswert $x(t)$.
+	Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert f√ºr jedes Funktionsargument $t$ ein ein Funktionswert $x(t)$.
 	\subsection{Klassifikation von Signalen}
 	\begin{itemize}
 	\item \textbf{gerade/ungerade}: $x(t)=x_g(t)+x_u(t)$, wobei $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$
-	\item \textbf{reell/imagin‰r/komplex}: $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$, wobei $x^*(t)$ komplex konjugiert zu $x(t)$, Realteil: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und Imagin‰rteil: $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$ 
-	\item \textbf{periodisch}: es existiert $T$, sodass $x(t+T)=x(t)$ f¸r alle $t$; Kleinstes $T$ heiﬂt dann Periode
+	\item \textbf{reell/imagin√§r/komplex}: $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$, wobei $x^*(t)$ komplex konjugiert zu $x(t)$, Realteil: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und Imagin√§rteil: $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$ 
+	\item \textbf{periodisch}: es existiert $T$, sodass $x(t+T)=x(t)$ f√ºr alle $t$; Kleinstes $T$ hei√üt dann Periode
 	\item \textbf{einkanalig}: ein Funktionswert, z.B. $x(t)$
 	\item \textbf{mehrkanalig}: mehrere Funktionswerte, z.B. $\begin{bmatrix}
 	x_1(t) \\ 
@@ -66,14 +66,14 @@
 	\item Exponentialsignal
 	\end{itemize}
 	\subsection{System}
-	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heiﬂt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heiﬂen.
+	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System hei√üt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so hei√üen.
 	\subsection{Klassifikation von Systemen}
 	\begin{itemize}
-	\item Ged‰chtnis
-	\item Kausalit‰t
+	\item Ged√§chtnis
+	\item Kausalit√§t
 	\item Zeitvarianz
-	\item Linearit‰t
-	\item BIBO-Stabilit‰t
+	\item Linearit√§t
+	\item BIBO-Stabilit√§t
 	\end{itemize}
 	\subsection{Parallel- und Kettenschaltung von Systemen}
 	\begin{itemize}
