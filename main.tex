@@ -31,6 +31,10 @@
 	\xrightarrow{~\mathcal{F}~}
 }
 
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\rect}{rect}
+
 \pagenumbering{arabic}
 \titleformat*{\section}{\sffamily\huge\bfseries}
 \titleformat*{\subsection}{\sffamily\Large\bfseries}
@@ -338,6 +342,24 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	\[\dfrac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \longrightarrow \int_{-\infty}^{\Omega}X(j\sigma)d\sigma \]
 }
 
+\end{multicols}
+
+\subsection*{Wichtige Fouriertransformationen}
+\begin{multicols}{2}
+\small
+\[ \delta(t) \ftransform 1 \]
+\[ \frac{1}{2 \pi} \ftransform \delta(\Omega) \]
+\[ \delta(t - t_0) \ftransform e^{-j\Omega t_0} \]
+\[ \frac{1}{2 \pi} ~ e^{j \Omega_0 t} \ftransform \delta(\Omega - \Omega_0) \]
+\[ \cos(\Omega_0 t) \ftransform \pi \left( \delta(\Omega - \Omega_0) + \delta(\Omega + \Omega_0) \right) \]
+\[ \sin(\Omega_0 t) \ftransform \frac{\pi}{j} \left( \delta(\Omega - \Omega_0) - \delta(\Omega + \Omega_0) \right) \]
+\[ \sgn(t) \ftransform \frac{2}{j \Omega} ~ o(\Omega) \]
+\[ \frac{j}{\pi t} ~ o(t) \ftransform \sgn(t) \]
+\[ u(t) \ftransform \pi \delta(\Omega) + \frac{1}{j \Omega} ~ o(\Omega) \]
+\[ \frac{1}{2} \delta(t) + \frac{j}{2 \pi t} ~ o(t) \ftransform u(\Omega) \]
+\[ \rect \left(\frac{t}{T} \right) \ftransform 2 T ~ \sinc(\Omega T) \]
+\[ \frac{\Omega_g}{\pi} ~ \sinc(\Omega_g t) \ftransform \rect \left( \frac{\Omega}{\Omega_g} \right) \]
+\[ \left(1 - \frac{|t|}{T} \right) ~ \rect \left(\frac{t}{T} \right) \ftransform T ~ \sinc^2 \left( \frac{\Omega T}{2} \right) \]
 \end{multicols}
 
 \newpage
