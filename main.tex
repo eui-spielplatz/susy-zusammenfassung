@@ -42,25 +42,31 @@
 \subsection*{Signal}
 Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsargument $t$ einen Funktionswert $x(t)$.
 \subsection*{Klassifikation von Signalen}
-\begin{itemize}
-	\item \textbf{gerade/ungerade}: $x(t)=x_g(t)+x_u(t)$, wobei $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$
-	\item \textbf{reell/imaginär/komplex}: $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$, wobei $x^*(t)$ komplex konjugiert zu $x(t)$, Realteil: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und Imaginärteil: $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$ 
-	\item \textbf{periodisch}: es existiert $T$, sodass $x(t+T)=x(t)$ für alle $t$; Kleinstes $T$ heißt dann Periode
-	\item \textbf{einkanalig}: ein Funktionswert, z.B. $x(t)$
-	\item \textbf{mehrkanalig}: mehrere Funktionswerte, z.B.
+\begin{tabular}{r p{12cm}}
+	\textbf{gerade/ungerade} & $x(t)=x_g(t)+x_u(t)$\\
+	 & es gilt: $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$\\
+	 & damit: $x_g(t)=\dfrac{1}{2}(x(t)+x(-t))$ und $x_u(t)=\dfrac{1}{2}(x(t)-x(-t))$\\
+	 \textbf{reell/imaginär/komplex} & $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$\\
+	 & es gilt: $x_r(t)$ und $x_i(t) \in \mathbb R$\\
+	 & damit: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$\\
+	 \textbf{periodisch} & es existiert $T$, sodass $x(t+T)=x(t)$ für alle $t$\\
+	 & kleinstes $T$ heißt Periode\\
+	 \textbf{einkanalig} & 1 Funktionswerk, z.B. $x(t)$\\
+	 \textbf{mehrkanalig} & mehrere Funktionswerte, z.B.
 	$\begin{bmatrix}
 		x_1(t) \\ 
 		x_2(t)
-	\end{bmatrix}$
-	\item \textbf{eindimensional}: ein Funktionsargument, z.B. $x(t)$
-	\item \textbf{mehrdimensional}:mehrere Funktionsargumente, z.B. $x(t,x,y)$
-	\item \textbf{zeitkontinuierlich}: zeitkontinuierliches Funktionsargument, $x(t)$ mit $t \in \mathbb R$
-	\item \textbf{zeitdiskret}: zeitdiskretes Funktionsargument, $x(n)$ mit $n \in \mathbb Z$
-	\item \textbf{wertkontinuierlich}: kontinuierlicher Funktionswert
-	\item \textbf{wertdiskret}: diskreter Funktionswert
-	\item \textbf{analog}: zeitkontinuierliche und wertkontinuierlich
-	\item \textbf{digital}: zeitdiskret und wertdiskret
-\end{itemize}
+	\end{bmatrix}$\\
+	\textbf{eindimensional} & 1 Funktionsargument, z.B. $x(t)$\\
+	\textbf{mehrdimensional} & mehrere Funktionsargumente, z.B. $x(t,x,y)$\\
+	\textbf{zeitkontinuierlich} & zeitkontinuierliches Funktionsargument, $x(t)$ mit $t \in \mathbb R$\\
+	\textbf{zeitdiskret} & zeitdiskretes Funktionsargument, $x(n)$ mit $n \in \mathbb Z$\\
+	\textbf{wertkontinuierlich} & kontinuierlicher Funktionswert\\
+	\textbf{wertdiskret} & diskreter Funktionswert\\
+	\textbf{analog} & zeitkontinuierliche und wertkontinuierlich\\
+	\textbf{digital} & zeitdiskret und wertdiskret\\
+\end{tabular}
+
 \subsection*{Zeitkontinuierliche Signale}
 \begin{itemize}
 	\item Sprungfunktion
