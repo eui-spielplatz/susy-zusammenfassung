@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{multicol}
 \usepackage{color}
 \usepackage{float}
 \usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
@@ -17,6 +18,12 @@
 
 \newcommand{\fancythumb}[2]{
 	\addthumb{#1}{\large\sffamily\textbf{\space\space#1\vspace{5pt}}}{white}{#2}
+}
+
+\newcommand{\fancyformula}[2]{
+	\small
+	\raggedright\sffamily\textbf{#1}
+	#2
 }
 
 \pagenumbering{arabic}
@@ -188,8 +195,17 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \]
 
 \newpage
+
+
 \section*{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
 \fancythumb{ZK-f}{blue}
+\section*{Eigenschaften der Fouriertransformation}
+\begin{multicols}{2}
+	
+\fancyformula{Definition}{
+	\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
+}
+\end{multicols}
 
 \newpage
 \section*{Zeitdiskrete LTI-Systeme im Frequenzbereich}
