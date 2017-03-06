@@ -27,6 +27,10 @@
 	#2
 }
 
+\newcommand{\ftransform}{
+	\xrightarrow{~\mathcal{F}~}
+}
+
 \pagenumbering{arabic}
 \titleformat*{\section}{\sffamily\huge\bfseries}
 \titleformat*{\subsection}{\sffamily\Large\bfseries}
@@ -210,20 +214,77 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \begin{tabular}{ >{\centering\arraybackslash} m{7cm} >{\centering\arraybackslash} m{1cm} >{\centering\arraybackslash} m{7cm} }
 
 \[
-	c_k = \frac{1}{T} ~ \int_T x(t) ~ e^{-jk\Omega t} \mathrm dt
+	c_k = \frac{1}{T} ~ \int_T x(t) ~ e^{-jk\Omega t} ~ \mathrm dt
 \] & \textit{\sffamily oder} & {
 \[
-	a_0 = \frac{1}{T} \int_T x(t) \mathrm dt
+	a_0 = \frac{1}{T} \int_T x(t) ~ \mathrm dt
 \]
 \[
-	a_k = \frac{2}{T} \int_T x(t) ~ \cos(k\Omega t) \mathrm dt, ~ k \in \mathbb Z
+	a_k = \frac{2}{T} \int_T x(t) ~ \cos(k\Omega t) ~ \mathrm dt, ~ k \in \mathbb Z
 \]
 \[
-	b_k = \frac{2}{T} \int_T x(t) ~ \sin(k\Omega t) \mathrm dt, ~ k \in \mathbb Z
+	b_k = \frac{2}{T} \int_T x(t) ~ \sin(k\Omega t) ~ \mathrm dt, ~ k \in \mathbb Z
 \]
 }\\
 \end{tabular}
 \end{centering}
+
+\subsubsection*{Eigenschaften}
+\begin{multicols}{2}
+\fancyformula{Spiegelung}{
+	\[ x(-t)  \ftransform c_{-k} \]
+}
+
+\fancyformula{Konjugiert komplex}{
+	\[ x^*(t)  \ftransform c^*_{-k} \]
+}
+
+\fancyformula{Symmetrie}{
+ \begin{align*}
+	x(t) \textnormal{ gerade reell } &\Longleftrightarrow c_k \textnormal{ gerade reell } \\
+	x(t) \textnormal{ gerade imaginär } &\Longleftrightarrow c_k \textnormal{ gerade imaginär } \\
+	x(t) \textnormal{ ungerade reell } &\Longleftrightarrow c_k \textnormal{ ungerade imaginär } \\
+	x(t) \textnormal{ ungerade imaginär } &\Longleftrightarrow c_k \textnormal{ ungerade reell }
+\end{align*}
+}
+
+\fancyformula{Linearität}{
+	\[ \sum_i \alpha_i ~ x_i(t) \ftransform \sum_i \alpha_i ~ c_{i, k} \]
+}
+
+\fancyformula{Verschiebung}{
+	\[ x(t - t_0) \ftransform e^{-jk\Omega t_0} ~ c_k \]
+	\[ e^{jk_0\Omega t} ~ x(t) \ftransform c_{k-k_0}, ~ k_0 \in \mathbb Z \]
+}
+
+\fancyformula{Dehnung}{
+	\[ a > 0: x(at) \ftransform c_k \textnormal{ mit Grundfrequenz } a\Omega \]
+}
+
+\fancyformula{Differentiation}{
+	\[ x^{(n)}(t) \ftransform (jk\Omega)^n ~ c_k \]
+}
+
+\fancyformula{Integration}{
+	\[ \int_{-\infty}^t x(\tau) ~ \mathrm d\tau \ftransform \frac{1}{jk\Omega} ~ c_k \textnormal{ wenn } c_0 = 0 \]
+}
+
+\fancyformula{Moment}{
+	\[ \sum_{k=-\infty}^\infty k^n ~ c_k = \frac{1}{(j\Omega)^n} ~ x^{(n)}(t) \bigg|_{t=0} \]
+}
+
+\fancyformula{Faltung}{
+	\[ \frac{1}{T} \int_T x_1(\tau) ~ x_2(t - \tau) \mathrm ~ d\tau \ftransform c_{1,k} ~ c_{2, k} \]
+	\[ x_1(t) ~ x_2(t) \ftransform \sum_{l=-\infty}^{\infty} c_{1, l} ~ c_{2, k - l} \]
+}
+
+\fancyformula{Parsevalsche Gleichung}{
+	\[ \frac{1}{T} \int_T |x(t)|^2 \mathrm dt = \sum_{k = -\infty}^{\infty} |c_k|^2 = a_0 + \frac{1}{2} \sum_{k=1}^{\infty} \left(|a_k|^2 + |b_k|^2 \right) \]
+}
+\fancyformula{Anfangswert}{
+	\[ x(0) = \sum_{k=-\infty}^{\infty} c_k \]
+}
+\end{multicols}
 
 \newpage
 
