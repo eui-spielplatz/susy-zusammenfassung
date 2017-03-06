@@ -301,14 +301,14 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \section*{Fouriertransformation}
 \subsection*{Definition}
 \begin{multicols}{2}
-		\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
-		\[ x(t)=\int_{-\infty}^{\infty}X(j\Omega)e^{j\Omega t} \dfrac{d\Omega}{2\pi} \]
+	\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
+	\[ x(t)=\int_{-\infty}^{\infty}X(j\Omega)e^{j\Omega t} \dfrac{d\Omega}{2\pi} \]
 \end{multicols}
 \subsection*{Eigenschaften}
 \begin{multicols}{2}
-
-\fancyformula{Spiegelung}{\[ x(-t)\longrightarrow X(-j\Omega) \]}
-\fancyformula{Konjugiert komplex}{\[ x^*(t) \longrightarrow X^*(j\Omega)\]}
+	
+\fancyformula{Spiegelung}{\[ x(-t)\ftransform X(-j\Omega) \]}
+\fancyformula{Konjugiert komplex}{\[ x^*(t) \ftransform X^*(j\Omega)\]}
 \fancyformula{Symmetrie}{
 \begin{align*}
 	x(t) \textnormal{gerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{gerade reel} \\
@@ -317,31 +317,46 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	x(t) \textnormal{ungerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{ungerade reell} \\
 \end{align*}
 }
-\fancyformula{Dualität / Vertauschbarkeit}{\[ X(jt)\longrightarrow 2\pi x(-\Omega) \]}
-\fancyformula{Linearität}{\[ \sum_{i} a_i x_i(t) \longrightarrow \sum_{i} a_i X_i(j\Omega)\]}
+\fancyformula{Dualität / Vertauschbarkeit}{\[ X(jt)\ftransform 2\pi x(-\Omega) \]}
+\fancyformula{Linearität}{\[ \sum_{i} a_i x_i(t) \ftransform \sum_{i} a_i X_i(j\Omega)\]}
 \fancyformula{Verschiebung}{
 \begin{align*}
-	x(t-t_0) &\longrightarrow e^{-j\Omega t_0}X(j\Omega) \\
-	e^{j\Omega_0t}x(t) &\longrightarrow X(j\Omega-j\Omega_0)
+	x(t-t_0) &\ftransform e^{-j\Omega t_0}X(j\Omega) \\
+	e^{j\Omega_0t}x(t) &\ftransform X(j\Omega-j\Omega_0)
 \end{align*}
 }
 \fancyformula{Dehnung}{
-	\begin{align*}
-	x(at) &\longrightarrow \dfrac{1}{a}~X\bigg(j\dfrac{\Omega}{a}\bigg), a>0 \\
-	\dfrac{1}{a}~x\bigg(\dfrac{t}{a}\bigg) &\longrightarrow X(ja\Omega), a>0
-	\end{align*}
+\begin{align*}
+	x(at) &\ftransform \dfrac{1}{a}~X\bigg(j\dfrac{\Omega}{a}\bigg), a>0 \\
+	\dfrac{1}{a}~x\bigg(\dfrac{t}{a}\bigg) &\ftransform X(ja\Omega), a>0
+\end{align*}
 }
 \fancyformula{Differentiation}{
 \begin{align*}
-	x^{(n)}(t) &\longrightarrow (j\Omega)^nX(j\Omega) \\
-	(-jt)^nx(t) &\longrightarrow X^{(n)}(j\Omega)
+	x^{(n)}(t) &\ftransform (j\Omega)^nX(j\Omega) \\
+	(-jt)^nx(t) &\ftransform X^{(n)}(j\Omega)
 \end{align*}	
 }
 \fancyformula{Integration}{
-	\[\int_{-\infty}^{t}x(\theta)d\theta \longrightarrow \dfrac{1}{j\Omega} X(j\Omega) o(\Omega)+\pi X(0)\delta(\Omega)\]
-	\[\dfrac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \longrightarrow \int_{-\infty}^{\Omega}X(j\sigma)d\sigma \]
+	\[\int_{-\infty}^{t}x(\vartheta)d\vartheta \ftransform \dfrac{1}{j\Omega} X(j\Omega) o(\Omega)+\pi X(0)\delta(\Omega)\]
+	\[\dfrac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \ftransform \int_{-\infty}^{\Omega}X(j\sigma)d\sigma \]
 }
-
+\fancyformula{Moment}{
+\begin{align*}
+	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n X^{(n)}(j\Omega)|_{\Omega=0} \\
+	\int_{-\infty}^{\infty}\Omega^n X(j\Omega)\dfrac{d\Omega}{2\pi}&=(-j)^n x^{(n)}(t)|_{t=0}
+\end{align*}	
+}
+\fancyformula{Faltung}{
+\begin{align*}
+	(x_1 \ast x_2)(t) &\ftransform X_1(j\Omega)X_2(j\Omega)\\
+	x_1(t)x_2(t) &\ftransform \dfrac{1}{2\pi} (X_1 \ast X_2)(j\Omega)
+\end{align*}
+}
+\fancyformula{Parsevalsche Gleichung}{\[ \int_{-\infty}^{\infty}x_1(t)x_2^*(t)dt=\int_{-\infty}^{\infty}X_1(j\Omega)X_2^*(j\Omega)\dfrac{d\Omega}{2\pi} \]}
+\fancyformula{Anfangswert}{
+	\[ X(0)=\int_{-\infty}^{\infty}x(t)dt\qquad x(0)=\int_{-\infty}^{\infty}X(j\Omega)\dfrac{d\Omega}{2\pi} \]	
+}
 \end{multicols}
 
 \subsection*{Wichtige Fouriertransformationen}
