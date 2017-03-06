@@ -49,10 +49,10 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \begin{tabular}{r p{12cm}}
 	\textbf{gerade/ungerade} & $x(t)=x_g(t)+x_u(t)$\\
 	 & es gilt: $x_g(-t)=x_g(t)$ und $x_u(-t)=-x_u(t)$, $x_u(0)=0$\\
-	 & damit: $x_g(t)=\dfrac{1}{2}(x(t)+x(-t))$ und $x_u(t)=\dfrac{1}{2}(x(t)-x(-t))$\\
+	 & damit: $x_g(t)=\frac{1}{2}(x(t)+x(-t))$ und $x_u(t)=\frac{1}{2}(x(t)-x(-t))$\\
 	 \textbf{reell/imaginär/komplex} & $x(t)=x_r(t)+jx_i(t)$ und $x^*(t)=x_r(t)-jx_i(t)$\\
 	 & es gilt: $x_r(t)$ und $x_i(t) \in \mathbb R$\\
-	 & damit: $x_r(t)=\dfrac{1}{2}(x(t)+x^*(t))$ und $x_i(t)=\dfrac{1}{2j}(x(t)-x^*(t))$\\
+	 & damit: $x_r(t)=\frac{1}{2}(x(t)+x^*(t))$ und $x_i(t)=\frac{1}{2j}(x(t)-x^*(t))$\\
 	 \textbf{periodisch} & es existiert $T$, sodass $x(t+T)=x(t)$ für alle $t$\\
 	 & kleinstes $T$ heißt Periode\\
 	 \textbf{einkanalig} & 1 Funktionswerk, z.B. $x(t)$\\
@@ -72,23 +72,47 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \end{tabular}
 
 \subsection*{Zeitkontinuierliche Signale}
-\begin{itemize}
-	\item Sprungfunktion
-	\item Vorzeichenfunktion
-	\item Rechteckfunktion
-	\item Reelles oder komplexes Sinussignal
-	\item Exponentialsignal
-	\item verschobenes Rechteck
-	\item Dreieck
-\end{itemize}
+\begin{tabular}{r>{\centering\arraybackslash}p{6cm}l}
+	\textbf{Sprungfunktion} & $u(t)=\begin{cases}
+	1 & \text{für } t>0\\
+	0 & \text{für } t<0\\
+	\end{cases}$ & \\
+	\textbf{Vorzeichenfunktion} & $sgn(t)=\begin{cases}
+	1 & \text{für } t>0\\
+	-1 & \text{für } t<0\\
+	\end{cases}$ & \\ 
+	& $sgn(t) = 2u(t)-1$ & \\
+	\textbf{Rechteckfunktion} & $rect(t)=\begin{cases}
+	1 & \text{für } \vert t\vert<1\\
+	0 & \text{für } \vert t\vert>1\\
+	\end{cases}$ & \\
+	& $rect(t)= u(t+1)-u(t-1)$& \\
+	\textbf{$\mathbb C \text{ oder } \mathbb R$ Sinussignal} & $x(t)=Asin(\Omega t+ \phi)$& \\
+	& $x(t)=Ae^{j(\Omega t + \phi)}$ & \\
+	\textbf{Exponentialsignal} & $x(t)=Ae^{st}$ mit $s=\sigma + j\Omega$&\\
+	\textbf{verschob. Rechteck}&$Arect(\dfrac{t-\frac{t_1+t_2}{2}}{\frac{t_2-t_1}{2}})$&\\
+	\textbf{Dreieck}&$A\dfrac{t}{T}rect(\dfrac{t-\frac{T}{2}}{\frac{T}{2}})$&\\
+\end{tabular} 
 \subsection*{Zeitdiskrete Signale}
-\begin{itemize}
-	\item Sprungfunktion
-	\item Vorzeichenfunktion
-	\item Rechteckfunktion
-	\item Reelles oder komplexes Sinussignal
-	\item Exponentialsignal
-\end{itemize}
+\begin{tabular}{r>{\centering\arraybackslash}p{6cm}l}
+	\textbf{Sprungfunktion} & $u(n)=\begin{cases}
+	1 & \text{für } n=0,1,2,...\\
+	0 & \text{für } n=-1,-2,...\\
+	\end{cases}$ & \\
+	\textbf{Impulsfunktion} & $\delta(t)=\begin{cases}
+	1 & \text{für } n=0\\
+	-1 & \text{für } n=\pm1,\pm2,...\\
+	\end{cases}$ & \\ 
+	& $\delta(n) = u(n)-u(n-1)$&\\
+	\textbf{Rechteckfunktion} & $rect(\dfrac{n}{N})=\begin{cases}
+	1 & \text{für } \vert n\vert \leq N\\
+	0 & \text{für } \vert n\vert > N\\
+	\end{cases}$ & \\
+	& $rect(n)= u(n+N)-u(n-N-1)$& \\
+	\textbf{$\mathbb C \text{ oder } \mathbb R$ Sinussignal} & $x(n)=Asin(\omega n+ \phi)$& \\
+	& $x(n)=Ae^{j(\omega n + \phi)}$ & \\
+	\textbf{Exponentialsignal} & $x(n)=a^{n}$ mit $a \in \mathbb C$&\\
+	\end{tabular} 
 \subsection*{System}
 	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
 \subsection*{Klassifikation von Systemen}
