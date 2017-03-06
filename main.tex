@@ -7,9 +7,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{color}
+\usepackage{float}
 \usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
 \usepackage[german]{babel}
+\usepackage{subfigure}
+\usepackage[justification=centering]{caption}
 \author{Florian Euchner, Stefan Köbel, Chong Shen, Jan Frederik Dick}
 
 \newcommand{\fancythumb}[2]{
@@ -81,10 +84,37 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \end{itemize}
 
 \newpage
+
+
 \section*{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
 \fancythumb{ZK-t}{red}
-
+\subsection*{Impulsantwort und Sprungantwort}
+\subsection*{Faltung}
+\subsubsection*{Grafische Faltung}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{img/faltung1.pdf}
+	\caption*{Faltung zweier Rechtecksignale}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{img/faltung2.pdf}
+	\caption*{Faltung eines Rechtecks mit einem Signal mit zwei linearen Flanken}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{img/faltung3.pdf}
+	\caption*{Faltung verschieden hoher Rechtecksignale}
+\end{figure}
+\subsubsection*{Analytische Faltung}
+\paragraph*{Definition}
+\[ (f \ast g)(t)=\int_\mathbb{R}f(\tau)\cdot g(t-\tau) d\tau \]
+Das Ausgangssignal $y(t)$ eines Systems ist das Eingangssignal $x(t)$ mit der Impulsantwort $h(t)$ gefaltet.
+\[ y(t) = (x \ast h)(t)=\int_\mathbb{R}x(\tau)\cdot h(t-\tau) d\tau\]
+\subsection*{Überprüfung von Eigenschaften von LTI-Systemen mit Impulsantwort}
 \newpage
+
+
 \section*{Zeitdiskrete LTI-Systeme im Zeitbereich}
 \fancythumb{ZD-t}{magenta}
 \subsection*{Lineare Differenzengleichungen mit konstanten Koeffizienten}

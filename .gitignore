@@ -4,6 +4,6 @@
 !README.md
 !/img/
 !/img/*
-!/sources/
-/sources/*
-!/sources/*.odg
+!/source/
+/source/*
+!/source/*.odg
