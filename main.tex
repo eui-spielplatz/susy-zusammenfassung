@@ -76,38 +76,38 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\textbf{Sprungfunktion} & $u(t)=\begin{cases}
 	1 & \text{für } t>0\\
 	0 & \text{für } t<0\\
-	\end{cases}$ & \\
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitkontSprungfunktion}\\
 	\textbf{Vorzeichenfunktion} & $sgn(t)=\begin{cases}
 	1 & \text{für } t>0\\
 	-1 & \text{für } t<0\\
-	\end{cases}$ & \\ 
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitkontVorzeichenfunktion}\\ 
 	& $sgn(t) = 2u(t)-1$ & \\
 	\textbf{Rechteckfunktion} & $rect(t)=\begin{cases}
 	1 & \text{für } \vert t\vert<1\\
 	0 & \text{für } \vert t\vert>1\\
-	\end{cases}$ & \\
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitkontRechteckfunktion}\\
 	& $rect(t)= u(t+1)-u(t-1)$& \\
 	\textbf{$\mathbb C \text{ oder } \mathbb R$ Sinussignal} & $x(t)=Asin(\Omega t+ \phi)$& \\
 	& $x(t)=Ae^{j(\Omega t + \phi)}$ & \\
 	\textbf{Exponentialsignal} & $x(t)=Ae^{st}$ mit $s=\sigma + j\Omega$&\\
-	\textbf{verschob. Rechteck}&$Arect(\dfrac{t-\frac{t_1+t_2}{2}}{\frac{t_2-t_1}{2}})$&\\
-	\textbf{Dreieck}&$A\dfrac{t}{T}rect(\dfrac{t-\frac{T}{2}}{\frac{T}{2}})$&\\
+	\textbf{verschob. Rechteck}&$Arect(\dfrac{t-\frac{t_1+t_2}{2}}{\frac{t_2-t_1}{2}})$&\includegraphics[width=3cm]{img/zeitkontVerschobenesRechteck}\\
+	\textbf{Dreieck}&$A\dfrac{t}{T}rect(\dfrac{t-\frac{T}{2}}{\frac{T}{2}})$&\includegraphics[width=3cm]{img/zeitkontDreieck}\\
 \end{tabular} 
 \subsection*{Zeitdiskrete Signale}
 \begin{tabular}{r>{\centering\arraybackslash}p{6cm}l}
 	\textbf{Sprungfunktion} & $u(n)=\begin{cases}
 	1 & \text{für } n=0,1,2,...\\
 	0 & \text{für } n=-1,-2,...\\
-	\end{cases}$ & \\
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitdiskSprungfunktion}\\
 	\textbf{Impulsfunktion} & $\delta(t)=\begin{cases}
 	1 & \text{für } n=0\\
 	-1 & \text{für } n=\pm1,\pm2,...\\
-	\end{cases}$ & \\ 
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitdiskImpulsfunktion}\\ 
 	& $\delta(n) = u(n)-u(n-1)$&\\
 	\textbf{Rechteckfunktion} & $rect(\dfrac{n}{N})=\begin{cases}
 	1 & \text{für } \vert n\vert \leq N\\
 	0 & \text{für } \vert n\vert > N\\
-	\end{cases}$ & \\
+	\end{cases}$ & \includegraphics[width=3cm]{img/zeitdiskRechteckfunktion}\\
 	& $rect(n)= u(n+N)-u(n-N-1)$& \\
 	\textbf{$\mathbb C \text{ oder } \mathbb R$ Sinussignal} & $x(n)=Asin(\omega n+ \phi)$& \\
 	& $x(n)=Ae^{j(\omega n + \phi)}$ & \\
