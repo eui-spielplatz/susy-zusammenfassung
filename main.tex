@@ -226,11 +226,39 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \end{centering}
 
 \newpage
-\section*{Eigenschaften der Fouriertransformation}
+
+\section*{Fouriertransformation}
+\subsection*{Definition}
 \begin{multicols}{2}
-	
-\fancyformula{Definition}{
-	\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
+		\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
+		\[ x(t)=\int_{-\infty}^{\infty}X(j\Omega)e^{j\Omega t} \dfrac{d\Omega}{2\pi} \]
+\end{multicols}
+\subsection*{Eigenschaften}
+\begin{multicols}{2}
+
+\fancyformula{Spiegelung}{\[ x(-t)\longrightarrow X(-j\Omega) \]}
+\fancyformula{Konjugiert komplex}{\[ x^*(t) \longrightarrow X^*(j\Omega)\]}
+\fancyformula{Symmetrie}{
+\begin{align*}
+	x(t) \textnormal{gerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{gerade reel} \\
+	x(t) \textnormal{gerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{gerade imaginär} \\
+	x(t) \textnormal{ungerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{ungerade imaginär} \\
+	x(t) \textnormal{ungerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{ungerade reell} \\
+\end{align*}
+}
+\fancyformula{Dualität / Vertauschbarkeit}{\[ X(jt)\longrightarrow 2\pi x(-\Omega) \]}
+\fancyformula{Linearität}{\[ \sum_{i} a_i x_i(t) \longrightarrow \sum_{i} a_i X_i(j\Omega)\]}
+\fancyformula{Verschiebung}{
+\begin{align*}
+	x(t-t_0) &\longrightarrow e^{-j\Omega t_0}X(j\Omega) \\
+	e^{j\Omega_0t}x(t) &\longrightarrow X(j\Omega-j\Omega_0)
+\end{align*}
+}
+\fancyformula{Dehnung}{
+	\begin{align*}
+	x(at) &\longrightarrow \dfrac{1}{a}~X\bigg(j\dfrac{\Omega}{a}\bigg), a>0 \\
+	\dfrac{1}{a}~x\bigg(\dfrac{t}{a}\bigg) &\longrightarrow X(ja\Omega), a>0
+	\end{align*}
 }
 \end{multicols}
 
