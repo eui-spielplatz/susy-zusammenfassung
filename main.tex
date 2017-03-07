@@ -181,12 +181,24 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	\caption*{Faltung verschieden hoher Rechtecksignale}
 \end{figure}
 \subsubsection*{Analytische Faltung}
-\paragraph*{Definition}
+\subsubsection*{Definition}
 \[ (f \ast g)(t)=\int_\mathbb{R}f(\tau)\cdot g(t-\tau) d\tau \]
 Das Ausgangssignal $y(t)$ eines Systems ist das Eingangssignal $x(t)$ mit der Impulsantwort $h(t)$ gefaltet.
 \[ y(t) = (x \ast h)(t)=\int_\mathbb{R}x(\tau)\cdot h(t-\tau) d\tau\]
-\paragraph*{Eigenschaften}
-\subsection*{Überprüfung von Eigenschaften von LTI-Systemen mit Impulsantwort}
+\subsubsection*{Eigenschaften}
+\begin{tabular}{l l p{12cm}}
+	\textbf{E1)}&\textbf{Kommutativ} & $(x \ast h)(t) = (h \ast x)(t)$\\
+	\textbf{E2)}&\textbf{Assoziativ}(Kettenschaltung) & $((x \ast h_1) \ast h_2)(t) = (x \ast (h_1 \ast h_2))(t)$\\
+	\textbf{E3)}&\textbf{Distributiv}(Parallelschaltung) & $((x \ast h_1)(t)+(x \ast h_2)(t) = (x \ast (h_1 + h_2))(t)$
+\end{tabular}
+\centering
+\begin{tabular}{l | c | c | c |}
+& \textbf{E4)}&\textbf{E5)}&\textbf{E6)}\\
+\hline
+Wenn $x(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x$ & verschoben um $\tau_x$\\
+und $h(t)$ & $=0, \quad \forall t<0$ & Dauer $D_h$ & verschoben um $\tau_h$\\
+dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+\tau_h$\\
+\end{tabular}
 \newpage
 
 
