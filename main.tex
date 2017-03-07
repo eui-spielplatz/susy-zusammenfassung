@@ -374,7 +374,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \begin{multicols}{2}
 	
 \fancyformula{Spiegelung}{\[ x(-t)\ftransform X(-j\Omega) \]}
-\fancyformula{Konjugiert komplex}{\[ x^*(t) \ftransform X^*(j\Omega)\]}
+\fancyformula{Konjugiert komplex}{\[ x^*(t) \ftransform X^*(-j\Omega)\]}
 \fancyformula{Symmetrie}{
 \begin{align*}
 	x(t) \textnormal{ gerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{ gerade reell} \\
@@ -400,7 +400,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \fancyformula{Differentiation}{
 \begin{align*}
 	x^{(n)}(t) &\ftransform (j\Omega)^nX(j\Omega) \\
-	(-jt)^nx(t) &\ftransform X^{(n)}(j\Omega)
+	(-jt)^nx(t) &\ftransform \frac{\mathrm d^n X(j\Omega)}{\mathrm d\Omega^n}
 \end{align*}	
 }
 \fancyformula{Integration}{
@@ -409,8 +409,8 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 \fancyformula{Moment}{
 \begin{align*}
-	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{d^nX(j\Omega)}{d\Omega^n} |_{\Omega=0} \\
-	\int_{-\infty}^{\infty}\Omega^n X(j\Omega)\frac{d\Omega}{2\pi}&=(-j)^n x^{(n)}(t)|_{t=0}
+	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{d^nX(j\Omega)}{d\Omega^n} \bigg|_{\Omega=0} \\
+	\int_{-\infty}^{\infty}\Omega^n X(j\Omega)\frac{d\Omega}{2\pi}&=(-j)^n x^{(n)}(t) \bigg|_{t=0}
 \end{align*}	
 }
 \fancyformula{Faltung}{
@@ -481,4 +481,50 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 }
 \end{multicols}
 
+\section*{Fouriertransformation zeitdiskreter Signale}
+\fancythumb{DTFT}{pink}
+\subsection*{Definition}
+\[
+	x(n) = \int_{2\pi} X\left(e^{j\omega} \right) ~ e^{j\omega n} ~ \frac{\mathrm d\omega}{2 \pi} ~~ \textnormal{mit} ~~ X \left(e^{j\omega} \right) = \sum_{n = -\infty}^{\infty} x(n) ~ e^{-j\omega n}
+\]
+\subsection*{Eigenschaften}
+\begin{multicols}{2}
+	
+\fancyformula{Spiegelung}{\[ x(-n)\ftransform X \left(e^{-j\omega} \right) \]}
+\fancyformula{Konjugiert komplex}{\[ x^*(n) \ftransform X^* \left(e^{-j\omega} \right)\]}
+\fancyformula{Symmetrie}{
+\begin{align*}
+	x(n) \textnormal{ gerade reell} &\Longleftrightarrow X(e^{j\omega}) \textnormal{ gerade reell} \\
+	x(n) \textnormal{ gerade imaginär} &\Longleftrightarrow X(e^{j\omega}) \textnormal{ gerade imaginär} \\
+	x(n) \textnormal{ ungerade reell} &\Longleftrightarrow X(e^{j\omega}) \textnormal{ ungerade imaginär} \\
+	x(n) \textnormal{ ungerade imaginär} &\Longleftrightarrow X(e^{j\omega}) \textnormal{ ungerade reell} \\
+\end{align*}
+}
+\fancyformula{Periodizität}{\textit{Neu!} \[ X \left(e^{j(\omega + 2\pi)}\right) = X(e^{j\omega}) \]}
+\fancyformula{Linearität}{\[ \sum_{i} a_i x_i(n) \ftransform \sum_{i} a_i X_i\left(e^{j\omega} \right)\]}
+\fancyformula{Verschiebung}{
+\begin{align*}
+	x(n - n_0) &\ftransform e^{-j\omega n_0} ~ X\left(e^{j\omega} \right) \\
+	e^{j\omega_0 n} ~ x(n) &\ftransform X \left(e^{j (\omega - \omega_0)} \right)
+\end{align*}
+}
+\fancyformula{Differentiation}{
+\[
+	(-jn)^m ~ x(n) \ftransform \frac{\mathrm d^m X(e^{j\omega})}{\mathrm d\omega^m}
+\]
+}
+\fancyformula{Moment}{
+\begin{align*}
+	\sum_{n=-\infty}^{\infty} n^m ~ x(n) &= j^m \frac{d^m X \left(e^{j\omega} \right)}{d\omega^m} \bigg|_{\omega=0} \\
+	x(0) &= \int_{2\pi} X \left(e^{j\omega} \right) ~ \frac{\mathrm d\omega}{2\pi}
+\end{align*}	
+}
+\fancyformula{Faltung}{
+\begin{align*}
+	(x_1 \ast x_2)(n) &\ftransform X_1 \left(e^{j\omega} \right) ~ X_2 \left(e^{j\omega} \right)\\
+	x_1(n) ~ x_2(n) &\ftransform \int_{2\pi} X_1 \left(e^{j\lambda} \right) ~ X_2 \left(e^{j (\omega - \lambda)} \right) ~ \frac{\mathrm d\lambda}{2\pi}
+\end{align*}
+}
+\fancyformula{Parsevalsche Gleichung}{\[ \sum_{n=-\infty}^{\infty}x_1(n) ~ x_2^*(n) = \int_{2 \pi} X_1 \left(e^{j\omega} \right) ~ X_2^* \left(e^{j\omega} \right) ~ \frac{d\omega}{2\pi} \]}
+\end{multicols}
 \end{document}
