@@ -278,7 +278,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \]
 
 \newpage
-\section*{Fourierreihe}
+\section*{Fourierreihe zeitkontinuierlicher Signale}
 \fancythumb{FR}{blue}
 \subsection*{Definition}
 \[
@@ -363,7 +363,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 
 \newpage
 
-\section*{Fouriertransformation}
+\section*{Fouriertransformation zeitkontinuierlicher Signale}
 \fancythumb{FT}{violet}
 \subsection*{Definition}
 \begin{multicols}{2}
@@ -453,4 +453,32 @@ mit
 \[ T>0, \qquad\Omega_g>0, \qquad f(x)o(x)=\left\{\begin{array}{@{}ll@{}}
 f(x) ~ &x\neq0\\ 0 ~ &x=0
 \end{array}\right. \]
+
+\newpage
+\section*{Fourierreihe zeitdiskreter Signale}
+\fancythumb{DFS}{cyan}
+\subsection*{Definition}
+\[
+	x(n) = \sum_{k = 0}^{N - 1} c_k ~ e^{j \frac{2 \pi n}{N} k} ~ \textnormal{ mit } ~ c_k = \frac{1}{N} ~ \sum_{n = 0}^{N - 1} x(n) ~ e^{-j \frac{2 \pi n}{N} k}
+\]
+
+\subsection*{Existenzbedingung}
+$x(n)$ muss periodisch sein, was nur für rationale ($\in \mathbb Q$) normierte Frequenzen $f$ der Fall ist, zur Probe Vorfaktor von $n$ so ersetzen, dass Periodizität für rationales $f$ vorliegen würde. Sei beispielsweise
+\[
+	x(n) = \sin(a ~ x) \stackrel{!}{=} \sin(2\pi f ~ x) \implies f = \frac{a}{2 \pi}
+\]
+Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$. Da Summe endlich existiert DFS für periodische $x(n)$ immer.
+
+\subsection*{Eigenschaften}
+\begin{multicols}{2}
+\fancyformula{Periodizität}{
+	\[ c_{k + N} = c_k ~ \forall k \in \mathbb N \]
+}
+
+\fancyformula{Parseval'sche Gleichung,}{
+	\textit{mittlere Leistung von $x(n)$}
+	\[ \frac{1}{N} ~ \sum_{n = 0}^{N - 1} |x(n)|^2 = \sum_{k = 0}^{N - 1} |c_k|^2 \]
+}
+\end{multicols}
+
 \end{document}
