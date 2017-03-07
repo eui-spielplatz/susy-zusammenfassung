@@ -36,13 +36,13 @@
 \DeclareMathOperator{\rect}{rect}
 
 \pagenumbering{arabic}
-\titleformat*{\section}{\sffamily\huge\bfseries}
-\titleformat*{\subsection}{\sffamily\Large\bfseries}
-\titleformat*{\subsubsection}{\sffamily\large\bfseries}
+\titleformat*{\section}{\sffamily\Large\bfseries}
+\titleformat*{\subsection}{\sffamily\large\bfseries}
+\titleformat*{\subsubsection}{\sffamily\normalsize\bfseries}
 
 \begin{document}
-\section*{Signale und Systeme}
-\fancythumb{S\&S}{teal}
+\section*{Klassifikation von Signale und Systeme}
+\fancythumb{Klass.}{teal}
 \subsection*{Signal}
 Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsargument $t$ einen Funktionswert $x(t)$.
 \subsection*{Klassifikation von Signalen}
@@ -132,8 +132,8 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \newpage
 
 
-\section*{Zeitkontinuierliche LTI-Systeme im Zeitbereich}
-\fancythumb{ZK-t}{red}
+\section*{Impulsantwort und Faltung}
+\fancythumb{Faltung}{red}
 \subsection*{Impulsantwort und Sprungantwort}
 \subsection*{Faltung}
 \subsubsection*{Grafische Faltung}
@@ -161,8 +161,8 @@ Das Ausgangssignal $y(t)$ eines Systems ist das Eingangssignal $x(t)$ mit der Im
 \newpage
 
 
-\section*{Zeitdiskrete LTI-Systeme im Zeitbereich}
-\fancythumb{ZD-t}{magenta}
+\section*{DGLn}
+\fancythumb{DGL}{magenta}
 \subsection*{Lineare Differenzengleichungen mit konstanten Koeffizienten}
 \begin{tabular}{r p{12cm}}
 	\textbf{DGL} & $\alpha(D) ~ y(n) = \beta(D) ~ x(n)$, wobei $D^k(y) = y(n-k)$ und $\alpha$, $\beta$ Polynome vom Grad N bzw. M \\
@@ -235,11 +235,9 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 
 \newpage
 
-
-\section*{Zeitkontinuierliche LTI-Systeme im Frequenzbereich}
-\fancythumb{ZK-f}{blue}
-\subsection*{Fourierreihe}
-\subsubsection*{Definition}
+\section*{Fourierreihe}
+\fancythumb{FR}{blue}
+\subsection*{Definition}
 \[
 	x(t) = \sum_{k=-\infty}^\infty c_k ~ e^{jk\Omega t} = a_0 + \sum_{k=1}^\infty \left( a_k ~ \cos(k \Omega t) + b_k ~ \sin(k \Omega t) \right)
 \]
@@ -263,7 +261,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \end{tabular}
 \end{centering}
 
-\subsubsection*{Eigenschaften}
+\subsection*{Eigenschaften}
 \begin{multicols}{2}
 \fancyformula{Spiegelung}{
 	\[ x(-t)  \ftransform c_{-k} \]
@@ -323,6 +321,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \newpage
 
 \section*{Fouriertransformation}
+\fancythumb{FT}{violet}
 \subsection*{Definition}
 \begin{multicols}{2}
 	\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
@@ -411,15 +410,4 @@ mit
 f(x) ~ &x\neq0\\ 0 ~ &x=0
 \end{array}\right. \]
 
-\newpage
-\section*{Zeitdiskrete LTI-Systeme im Frequenzbereich}
-\fancythumb{ZD-f}{violet}
-
-\newpage
-\section*{Analyse von Signalen und LTI-Systemen in der komplexen Ebene}
-\fancythumb{$\mathbb{C}$}{olive}
-
-\newpage
-\section*{Allgemeinere Signale und Systeme}
-\fancythumb{Allg. S\&S}{black}
 \end{document}
