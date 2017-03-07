@@ -145,13 +145,37 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \subsection*{System}
 	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
 \subsection*{Klassifikation von Systemen}
-\begin{itemize}
-	\item Gedächtnis
-	\item Kausalität
-	\item Zeitvarianz
-	\item Linearität
-	\item BIBO-Stabilität
-\end{itemize}
+\paragraph*{Gedächnis}
+\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
+	\textbf{gedächnislos} & $y(t)$ hängt \textbf{nur} vom momentane $x(t)$ ab, für alle $t$ und $x(t)$\\
+	\textbf{mit Gedächnis} & $y(t)$ hängt auch von zukünftige $x(t-1)$ oder vergangene $x(t+1)$ ab\\
+\end{tabular}
+\paragraph*{Kausalität}
+\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
+	\textbf{kausal} & $y(t)$ hängt von vergangene $x(t+1)$ und momentane $x(t)$ ab, für alle $t$ und $x(t)$\\
+	\textbf{antikausal} & $y(t)$ hängt von zukünftige $x(t-1)$ und momentane $x(t)$ ab\\
+	\textbf{nichtkausal} & $y(t)$ hängt von zukünftige $x(t-1)$, aber nicht von momentane $x(t)$ ab\\
+\end{tabular}
+\paragraph*{Zeitinvarianz}
+\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
+	\textbf{zeitinvariant} & $y(t)=T(x(t))\Rightarrow y(t-\tau)=T(x(t-\tau))$ \\
+	& Systemverhalten unabhängig von "Alter" des Systems \\
+	\textbf{zeitvariant} & Systemverhalten abhängig von "Alter" des Systems\\
+\end{tabular}
+\paragraph*{Linearität}
+\begin{tabular}{r >{\centering\arraybackslash} p{6cm}}
+	\textbf{linear} & Superpositionsprinzip muss gelten:\\
+	& \textbf{homogen}: $T(ax(t))=aT(x(t))$\\
+	& \textbf{additiv}: $T(\sum x_i(t))=\sum T(x_i(t))$\\
+	& \textbf{durch Ursprung}: $T(0)=0$\\
+	\textbf{nichtlinear} & Bedingungen treffen nicht zu\\
+\end{tabular}
+\paragraph*{Stabilität}
+\begin{tabular}{r >{\centering\arraybackslash} p{12cm}}
+	\textbf{BIBO-stabil} & $\vert x(t)\vert\leq M_x <\infty\Rightarrow\vert y(t)\vert\leq M_y <\infty$ für alle $t$ und $x(t)$\\
+	& beschränktes Eingangssignal $\Rightarrow$ beschränktes Ausgangssignal\\
+	\textbf{instabil} & für Beschränktes Eingangssignal ist unbeschränktes Ausgangssignal möglich
+\end{tabular}
 \subsection*{Parallel- und Kettenschaltung von Systemen}
 \begin{itemize}
 	\item \textbf{Parallelschaltung} $y(t)=T_1(x(t))+T_2(x(t))+...+T_N(x(t))$
