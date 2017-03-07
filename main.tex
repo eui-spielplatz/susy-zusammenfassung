@@ -13,6 +13,7 @@
 \usepackage[left=2.50cm, right=2.00cm, top=2.50cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
 \usepackage[german]{babel}
+\usepackage[linewidth=1pt]{mdframed}
 \usepackage{subfigure}
 \usepackage[justification=centering]{caption}
 \author{Florian Euchner, Stefan Köbel, Chong Shen, Jan Frederik Dick}
@@ -376,10 +377,10 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \fancyformula{Konjugiert komplex}{\[ x^*(t) \ftransform X^*(j\Omega)\]}
 \fancyformula{Symmetrie}{
 \begin{align*}
-	x(t) \textnormal{gerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{gerade reel} \\
-	x(t) \textnormal{gerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{gerade imaginär} \\
-	x(t) \textnormal{ungerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{ungerade imaginär} \\
-	x(t) \textnormal{ungerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{ungerade reell} \\
+	x(t) \textnormal{ gerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{ gerade reell} \\
+	x(t) \textnormal{ gerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{ gerade imaginär} \\
+	x(t) \textnormal{ ungerade reell} &\Longleftrightarrow X(j\Omega) \textnormal{ ungerade imaginär} \\
+	x(t) \textnormal{ ungerade imaginär} &\Longleftrightarrow X(j\Omega) \textnormal{ ungerade reell} \\
 \end{align*}
 }
 \fancyformula{Dualität / Vertauschbarkeit}{\[ X(jt)\ftransform 2\pi x(-\Omega) \]}
@@ -446,7 +447,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad Re(a)>0\]
 	\[ e^{-a\lvert t \rvert}sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad Re(a)>0 \]
 	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad Re(a)>0 \]
-	\[ \cos^2(\frac{\pi t}{2T})rect(\frac{t}{T}) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
+	\[ \cos^2\left(\frac{\pi t}{2T}\right)~\rect\left(\frac{t}{T}\right) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
 \end{multicols}
 mit 
 \[ T>0, \qquad\Omega_g>0, \qquad f(x)o(x)=\left\{\begin{array}{@{}ll@{}}
