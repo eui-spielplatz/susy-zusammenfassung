@@ -72,11 +72,12 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \end{tabular}
 
 \subsection*{Zeitkontinuierliche Signale}
-\begin{tabular}{r >{\centering\arraybackslash} p{6cm}p{4cm}}
+\begin{tabular}{r >{\centering\arraybackslash} p{7cm} l}
 	\textbf{Sprungfunktion} & $u(t)=\begin{cases}
 	1 & \text{für } t>0\\
 	0 & \text{für } t<0\\
 	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontSprungfunktion}} \\
+
 	\textbf{Vorzeichenfunktion} &
 	{$\!\begin{aligned}
 		 \sgn(t) &= \begin{cases}
@@ -85,39 +86,61 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 		\end{cases} \\
 		&= 2 ~ u(t) - 1
 	\end{aligned}$}
-	& \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontVorzeichenfunktion}}\\ 
+	& \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontVorzeichenfunktion}} \\ 
+
 	\textbf{Rechteckfunktion} &
 	{$\!\begin{aligned}
 		 \rect(t) &= \begin{cases}
-			1 & \text{für } \vert t\vert<1\\
-			0 & \text{für } \vert t\vert>1\\
+			1 & \text{für } |t| < 1\\
+			0 & \text{für } |t| > 1\\
 		\end{cases} \\
 		&= u(t - 1) - u(t + 1)
 	\end{aligned}$}
 	& \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontRechteckfunktion}} \\
-	\textbf{verschob. Rechteck} & $A ~ \rect \left(\dfrac{t-\dfrac{t_1+t_2}{2}}{\dfrac{t_2-t_1}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontVerschobenesRechteck}}\\
+
+	\textbf{o-Funktion} & $o(x) = \begin{cases}
+		0 & \text{für } t = 0\\
+		1 & \text{für } t \neq 0\\
+	\end{cases}$ \\
+
+	\textbf{verschob. Rechteck} & $A ~ \rect \left(\dfrac{t-\dfrac{t_1+t_2}{2}}{\dfrac{t_2-t_1}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontVerschobenesRechteck}} \\
+
 	\textbf{Dreieck} & $A ~ \dfrac{t}{T} ~ \rect \left(\dfrac{t-\frac{T}{2}}{\dfrac{T}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontDreieck}} \\
-\end{tabular} 
+
+	\textbf{Impulsantwort} & $h(t) = T(\delta(t))$ \\
+	\textbf{Sprungantwort} & $a(t) = T(a(t))$
+\end{tabular}
+
 \subsection*{Zeitdiskrete Signale}
-\begin{tabular}{r>{\centering\arraybackslash}p{6cm}l}
+\begin{tabular}{r >{\centering\arraybackslash} p{7cm} l}
 	\textbf{Sprungfunktion} & $u(n)=\begin{cases}
-	1 & \text{für } n=0,1,2,...\\
-	0 & \text{für } n=-1,-2,...\\
-	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskSprungfunktion}}\\
-	\textbf{Impulsfunktion} & $\delta(t)=\begin{cases}
-	1 & \text{für } n=0\\
-	-1 & \text{für } n=\pm1,\pm2,...\\
-	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskImpulsfunktion}}\\ 
-	& $\delta(n) = u(n)-u(n-1)$&\\
-	\textbf{Rechteckfunktion} & $rect(\frac{n}{N})=\begin{cases}
-	1 & \text{für } \vert n\vert \leq N\\
-	0 & \text{für } \vert n\vert > N\\
-	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskRechteckfunktion}}\\
-	& $rect(n)= u(n+N)-u(n-N-1)$& \\
-	\textbf{$\mathbb C \text{ oder } \mathbb R$ Sinussignal} & $x(n) = A \sin(\omega n+ \varphi)$& \\
-	& $x(n)=Ae^{j(\omega n + \varphi)}$ & \\
-	\textbf{Exponentialsignal} & $x(n)=a^{n}$ mit $a \in \mathbb C$&\\
-	\end{tabular} 
+	1 & \text{für } n \geq 1\\
+	0 & \text{für } n < 1\\
+	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskSprungfunktion}} \\
+
+	\textbf{Impulsfunktion} &
+	{$\!\begin{aligned}
+		 \delta(t) &= \begin{cases}
+			1 & \text{für } n = 0 \\
+			0 & \text{für } n \neq 0 \\
+		\end{cases} \\
+		&= u(t - 1) - u(t + 1)
+	\end{aligned}$}
+	 & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskImpulsfunktion}} \\
+	
+	\textbf{Rechteckfunktion} &
+	{$\!\begin{aligned}
+		\rect \left(\dfrac{n}{N} \right) &= \begin{cases}
+			1 & \text{für } |n| \leq N\\
+			0 & \text{für } |n| > N\\
+		\end{cases} \\
+		&= u(n + N) - u(n - N - 1)
+	\end{aligned}$} & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskRechteckfunktion}} \\
+	
+	\textbf{Impulsantwort} & $h(n) = T(\delta(n))$ \\
+	\textbf{Sprungantwort} & $a(n) = T(a(n))$ \\
+\end{tabular} 
+
 \subsection*{System}
 	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
 \subsection*{Klassifikation von Systemen}
@@ -240,7 +263,6 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \]
 
 \newpage
-
 \section*{Fourierreihe}
 \fancythumb{FR}{blue}
 \subsection*{Definition}
@@ -263,7 +285,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \[
 	b_k = \frac{2}{T} \int_T x(t) ~ \sin(k\Omega t) ~ \mathrm dt, ~ k \in \mathbb Z
 \]
-}\\
+} \\
 \end{tabular}
 \end{centering}
 
@@ -415,5 +437,4 @@ mit
 \[ T>0, \qquad\Omega_g>0, \qquad f(x)o(x)=\left\{\begin{array}{@{}ll@{}}
 f(x) ~ &x\neq0\\ 0 ~ &x=0
 \end{array}\right. \]
-
 \end{document}
