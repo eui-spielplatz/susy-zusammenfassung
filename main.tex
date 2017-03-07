@@ -191,7 +191,8 @@ Das Ausgangssignal $y(t)$ eines Systems ist das Eingangssignal $x(t)$ mit der Im
 	\textbf{E2)}&\textbf{Assoziativ}(Kettenschaltung) & $((x \ast h_1) \ast h_2)(t) = (x \ast (h_1 \ast h_2))(t)$\\
 	\textbf{E3)}&\textbf{Distributiv}(Parallelschaltung) & $((x \ast h_1)(t)+(x \ast h_2)(t) = (x \ast (h_1 + h_2))(t)$
 \end{tabular}
-\centering
+\begin{center}
+	\centering
 \begin{tabular}{l | c | c | c |}
 & \textbf{E4)}&\textbf{E5)}&\textbf{E6)}\\
 \hline
@@ -199,6 +200,7 @@ Wenn $x(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x$ & verschoben um $\tau_x$\\
 und $h(t)$ & $=0, \quad \forall t<0$ & Dauer $D_h$ & verschoben um $\tau_h$\\
 dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+\tau_h$\\
 \end{tabular}
+\end{center}
 \newpage
 
 
@@ -406,7 +408,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 \fancyformula{Moment}{
 \begin{align*}
-	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n X^{(n)}(j\Omega)|_{\Omega=0} \\
+	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{d^nX(j\Omega)}{d\Omega^n} |_{\Omega=0} \\
 	\int_{-\infty}^{\infty}\Omega^n X(j\Omega)\frac{d\Omega}{2\pi}&=(-j)^n x^{(n)}(t)|_{t=0}
 \end{align*}	
 }
@@ -421,29 +423,30 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	\[ X(0)=\int_{-\infty}^{\infty}x(t)dt\qquad x(0)=\int_{-\infty}^{\infty}X(j\Omega)\frac{d\Omega}{2\pi} \]	
 }
 \end{multicols}
+\newpage
 
 \subsection*{Wichtige Fouriertransformationen}
 \begin{multicols}{2}
-\small
-\[ \delta(t) \ftransform 1 \]
-\[ \frac{1}{2 \pi} \ftransform \delta(\Omega) \]
-\[ \delta(t - t_0) \ftransform e^{-j\Omega t_0} \]
-\[ \frac{1}{2 \pi} ~ e^{j \Omega_0 t} \ftransform \delta(\Omega - \Omega_0) \]
-\[ \cos(\Omega_0 t) \ftransform \pi \left( \delta(\Omega - \Omega_0) + \delta(\Omega + \Omega_0) \right) \]
-\[ \sin(\Omega_0 t) \ftransform \frac{\pi}{j} \left( \delta(\Omega - \Omega_0) - \delta(\Omega + \Omega_0) \right) \]
-\[ \sgn(t) \ftransform \frac{2}{j \Omega} ~ o(\Omega) \]
-\[ \frac{j}{\pi t} ~ o(t) \ftransform \sgn(t) \]
-\[ u(t) \ftransform \pi \delta(\Omega) + \frac{1}{j \Omega} ~ o(\Omega) \]
-\[ \frac{1}{2} \delta(t) + \frac{j}{2 \pi t} ~ o(t) \ftransform u(\Omega) \]
-\[ \rect \left(\frac{t}{T} \right) \ftransform 2 T ~ \sinc(\Omega T) \]
-\[ \frac{\Omega_g}{\pi} ~ \sinc(\Omega_g t) \ftransform \rect \left( \frac{\Omega}{\Omega_g} \right) \]
-\[ \left(1 - \frac{|t|}{T} \right) ~ \rect \left(\frac{t}{T} \right) \ftransform T ~ \sinc^2 \left( \frac{\Omega T}{2} \right) \]
-\[ e^{-at}u(t) \ftransform \frac{1}{a+j\Omega},\quad Re(a)>0 \]
-\[ \frac{t^{n-1}}{(n-1)!}e^{-at}u(t) \ftransform \frac{1}{(a+j\Omega)^n},\quad Re(a)>0 \]
-\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad Re(a)>0\]
-\[ e^{-a\lvert t \rvert}sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad Re(a)>0 \]
-\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad Re(a)>0 \]
-\[ \cos^2(\frac{\pi t}{2T})rect(\frac{t}{T}) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
+	\small
+	\[ \delta(t) \ftransform 1 \]
+	\[ \frac{1}{2 \pi} \ftransform \delta(\Omega) \]
+	\[ \delta(t - t_0) \ftransform e^{-j\Omega t_0} \]
+	\[ \frac{1}{2 \pi} ~ e^{j \Omega_0 t} \ftransform \delta(\Omega - \Omega_0) \]
+	\[ \cos(\Omega_0 t) \ftransform \pi \left( \delta(\Omega - \Omega_0) + \delta(\Omega + \Omega_0) \right) \]
+	\[ \sin(\Omega_0 t) \ftransform \frac{\pi}{j} \left( \delta(\Omega - \Omega_0) - \delta(\Omega + \Omega_0) \right) \]
+	\[ \sgn(t) \ftransform \frac{2}{j \Omega} ~ o(\Omega) \]
+	\[ \frac{j}{\pi t} ~ o(t) \ftransform \sgn(t) \]
+	\[ u(t) \ftransform \pi \delta(\Omega) + \frac{1}{j \Omega} ~ o(\Omega) \]
+	\[ \frac{1}{2} \delta(t) + \frac{j}{2 \pi t} ~ o(t) \ftransform u(\Omega) \]
+	\[ \rect \left(\frac{t}{T} \right) \ftransform 2 T ~ \sinc(\Omega T) \]
+	\[ \frac{\Omega_g}{\pi} ~ \sinc(\Omega_g t) \ftransform \rect \left( \frac{\Omega}{\Omega_g} \right) \]
+	\[ \left(1 - \frac{|t|}{T} \right) ~ \rect \left(\frac{t}{T} \right) \ftransform T ~ \sinc^2 \left( \frac{\Omega T}{2} \right) \]
+	\[ e^{-at}u(t) \ftransform \frac{1}{a+j\Omega},\quad Re(a)>0 \]
+	\[ \frac{t^{n-1}}{(n-1)!}e^{-at}u(t) \ftransform \frac{1}{(a+j\Omega)^n},\quad Re(a)>0 \]
+	\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad Re(a)>0\]
+	\[ e^{-a\lvert t \rvert}sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad Re(a)>0 \]
+	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad Re(a)>0 \]
+	\[ \cos^2(\frac{\pi t}{2T})rect(\frac{t}{T}) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
 \end{multicols}
 mit 
 \[ T>0, \qquad\Omega_g>0, \qquad f(x)o(x)=\left\{\begin{array}{@{}ll@{}}
