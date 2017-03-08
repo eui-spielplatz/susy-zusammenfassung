@@ -204,10 +204,12 @@ Sei $a \in \mathbb R, a > 0$.
 \section*{Impulsantwort und Faltung}
 \fancythumb{Faltung}{red}
 \subsection*{Impulsantwort und Sprungantwort}
-\begin{tabular}{l l}
+\begin{tabular}{l p{12cm}}
 	\textbf{Impulsantwort} & Antwort $h(t)$ eines Systems auf die Anregung mit einer Dirac-Funktion $\delta(t)$ \\
 	\textbf{Sprungantwort} & Antwort $a(t)$ eines Systems auf die Anregung mit einer Sprungfunktion $u(t)$ \\
+	\textbf{Zusammenhang} & \vspace{-0.5cm}\[ a(t)=\int_{-\infty}^{t}h(\tau)d\tau, \qquad h(t)=\frac{da(t)}{dt} \]
 \end{tabular}
+\vspace{-0.6cm}
 \subsubsection*{Überprüfung von Systemeigenschaften mit $h(t)$}
 \begin{tabular}{l p{12cm}}
 	\textbf{E1)} & System gedächtnislos $\Longleftrightarrow y(t) = c~x(t)$\\ & $\rightarrow$ keine Ableitungen $\frac{d}{dt}x(t)$ dürfen auftreten \[h(t)=c~\delta(t)\]\\
