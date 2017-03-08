@@ -207,14 +207,14 @@ Sei $a \in \mathbb R, a > 0$.
 \begin{tabular}{l p{12cm}}
 	\textbf{Impulsantwort} & Antwort $h(t)$ eines Systems auf die Anregung mit einer Dirac-Funktion $\delta(t)$ \\
 	\textbf{Sprungantwort} & Antwort $a(t)$ eines Systems auf die Anregung mit einer Sprungfunktion $u(t)$ \\
-	\textbf{Zusammenhang} & \vspace{-0.5cm}\[ a(t)=\int_{-\infty}^{t}h(\tau)d\tau, \qquad h(t) = \frac{\mathrm da(t)}{\mathrm dt} \]
+	\textbf{Zusammenhang} & \vspace{-0.5cm}\[ a(t)=\int_{-\infty}^{t}h(\tau) ~ \mathrm d\tau, \qquad h(t) = \frac{\mathrm da(t)}{\mathrm dt} \]
 \end{tabular}
 \vspace{-0.6cm}
 \subsubsection*{Überprüfung von Systemeigenschaften mit $h(t)$}
 \begin{tabular}{l p{12cm}}
 	\textbf{E1)} & System gedächtnislos $\Longleftrightarrow y(t) = c~x(t)$\\ & $\rightarrow$ keine Ableitungen $\frac{d}{dt}x(t)$ dürfen auftreten \[h(t)=c~\delta(t)\]\\
 	\textbf{E2)} & System kausal $\Longleftrightarrow h(t)=0 \quad \forall t<0$ bzw.\\ & \[y(t)=\int_{-\infty}^{\infty}h(\tau) ~ x(t-\tau) ~ \mathrm d\tau = \int_{0}^{\infty} h(\tau) ~ x(t-\tau) ~ \mathrm d\tau\] $\rightarrow$ nur in Vergangenheit, weil $\tau$ positiv.
-	\[=\int_{-\infty}^{t} ~ x(\tau)h(t-\tau) ~ \mathrm d\tau\] \\
+	\[=\int_{-\infty}^{t} ~ x(\tau) ~ h(t-\tau) ~ \mathrm d\tau\] \\
 	\textbf{E3)} & System BIBO-Stabil $\Longleftrightarrow \int_{-\infty}^{\infty}|h(t)| \mathrm dt < \infty \quad \substack{\nleftarrow\\[-1em] \rightarrow}\quad h(t)\overset{t\rightarrow\infty}{\longrightarrow}0$
 \end{tabular}
 \subsection*{Faltung}
@@ -402,7 +402,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 
 \fancyformula{Faltung}{
-	\[ \frac{1}{T} \int_T x_1(\tau) ~ x_2(t - \tau) \mathrm ~ d\tau \ftransform c_{1,k} ~ c_{2, k} \]
+	\[ \frac{1}{T} \int_T x_1(\tau) ~ x_2(t - \tau) ~ \mathrm d\tau \ftransform c_{1,k} ~ c_{2, k} \]
 	\[ x_1(t) ~ x_2(t) \ftransform \sum_{l=-\infty}^{\infty} c_{1, l} ~ c_{2, k - l} \]
 }
 
@@ -421,8 +421,8 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \subsection*{Definition}
 \begin{multicols}{2}
 	\noindent
-	\[ X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt \]
-	\[ x(t)=\int_{-\infty}^{\infty}X(j\Omega)e^{j\Omega t} \frac{d\Omega}{2\pi} \]
+	\[ X(j\Omega)=\int_{-\infty}^{\infty} x(t) ~ e^{-j\Omega t} ~ \mathrm dt \]
+	\[ x(t)=\int_{-\infty}^{\infty} X(j\Omega) ~ e^{j\Omega t} ~ \frac{\mathrm d\Omega}{2\pi} \]
 \end{multicols}
 \subsection*{Eigenschaften}
 \begin{multicols}{2}
@@ -458,13 +458,13 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \end{align*}	
 }
 \fancyformula{Integration}{
-	\[\int_{-\infty}^{t}x(\vartheta)d\vartheta \ftransform \frac{1}{j\Omega} X(j\Omega) o(\Omega)+\pi X(0)\delta(\Omega)\]
-	\[\frac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \ftransform \int_{-\infty}^{\Omega}X(j\sigma)d\sigma \]
+	\[\int_{-\infty}^{t}x(\vartheta) ~ \mathrm d\vartheta \ftransform \frac{1}{j\Omega} X(j\Omega) o(\Omega)+\pi X(0)\delta(\Omega)\]
+	\[\frac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \ftransform \int_{-\infty}^{\Omega}X(j\sigma) ~ \mathrm d\sigma \]
 }
 \fancyformula{Moment}{
 \begin{align*}
-	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{d^nX(j\Omega)}{d\Omega^n} \bigg|_{\Omega=0} \\
-	\int_{-\infty}^{\infty}\Omega^n X(j\Omega)\frac{d\Omega}{2\pi}&=(-j)^n x^{(n)}(t) \bigg|_{t=0}
+	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{\mathrm d^nX(j\Omega)}{\mathrm d\Omega^n} \bigg|_{\Omega=0} \\
+	\int_{-\infty}^{\infty}\Omega^n X(j\Omega) ~ \frac{\mathrm d\Omega}{2\pi}&=(-j)^n x^{(n)}(t) \bigg|_{t=0}
 \end{align*}	
 }
 \fancyformula{Faltung}{
@@ -473,9 +473,10 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	x_1(t)x_2(t) &\ftransform \frac{1}{2\pi} (X_1 \ast X_2)(j\Omega)
 \end{align*}
 }
-\fancyformula{Parsevalsche Gleichung}{\[ \int_{-\infty}^{\infty}x_1(t)x_2^*(t)dt=\int_{-\infty}^{\infty}X_1(j\Omega)X_2^*(j\Omega)\frac{d\Omega}{2\pi} \]}
+\fancyformula{Parsevalsche Gleichung}{\[ \int_{-\infty}^{\infty} x_1(t) ~ x_2^*(t) ~ \mathrm dt = \int_{-\infty}^{\infty}X_1(j\Omega) ~ X_2^*(j\Omega) ~ \frac{\mathrm d\Omega}{2\pi} \]}
+
 \fancyformula{Anfangswert}{
-	\[ X(0)=\int_{-\infty}^{\infty}x(t)dt\qquad x(0)=\int_{-\infty}^{\infty}X(j\Omega)\frac{d\Omega}{2\pi} \]	
+	\[ X(0) = \int_{-\infty}^{\infty} x(t) ~ \mathrm dt \qquad x(0)=\int_{-\infty}^{\infty} X(j\Omega) ~ \frac{\mathrm d\Omega}{2\pi} \]	
 }
 \end{multicols}
 \newpage
@@ -576,7 +577,7 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 	x_1(n) ~ x_2(n) &\ftransform \int_{2\pi} X_1 \left(e^{j\lambda} \right) ~ X_2 \left(e^{j (\omega - \lambda)} \right) ~ \frac{\mathrm d\lambda}{2\pi}
 \end{align*}
 }
-\fancyformula{Parsevalsche Gleichung}{\[ \sum_{n=-\infty}^{\infty}x_1(n) ~ x_2^*(n) = \int_{2 \pi} X_1 \left(e^{j\omega} \right) ~ X_2^* \left(e^{j\omega} \right) ~ \frac{d\omega}{2\pi} \]}
+\fancyformula{Parsevalsche Gleichung}{\[ \sum_{n=-\infty}^{\infty}x_1(n) ~ x_2^*(n) = \int_{2 \pi} X_1 \left(e^{j\omega} \right) ~ X_2^* \left(e^{j\omega} \right) ~ \frac{\mathrm d\omega}{2\pi} \]}
 \end{multicols}
 \subsection*{Wichtige zeitdiskrete Fouriertransformationen}
 \[ \textnormal{Mit } ~ \eta(\omega) := \sum_{k=-\infty}^{\infty}\delta(\omega+2k\pi) \]
