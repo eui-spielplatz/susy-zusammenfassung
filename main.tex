@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{array}
 \usepackage{color}
 \usepackage{float}
@@ -145,38 +146,42 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \subsection*{System}
 	Das System hat einen \textbf{Operator}, der eine Funktion auf eine andere Funktion abbildet. Ein System heißt \textbf{zeitkontinuierlich, zeitdiskret, analog, digital}, wenn alle beteiligten Signale so heißen.
 \subsection*{Klassifikation von Systemen}
-\paragraph*{Gedächnis}
-\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
-	\textbf{gedächnislos} & $y(t)$ hängt \textbf{nur} vom momentane $x(t)$ ab, für alle $t$ und $x(t)$\\
-	\textbf{mit Gedächnis} & $y(t)$ hängt auch von zukünftige $x(t-1)$ oder vergangene $x(t+1)$ ab\\
+Sei $a \in \mathbb R, a > 0$.
+\vspace{.5em}
+
+\begin{centering}
+\begin{tabular}{r | r | p{11.5cm}}
+	\textbf{Gedächtnis} &
+	\textbf{gedächtnislos} & $y(t)$ hängt \textbf{nur} vom momentanem $x(t)$ ab \\
+	& \textbf{mit Gedächtnis} & $y(t)$ hängt auch von zukünftigen $x(t + a)$ oder vergangenen $x(t - a)$ ab \\
+
+	\textbf{Kausalität} &
+	\textbf{kausal} & $y(t)$ hängt von vergangenen $x(t - a)$ und momentanem $x(t)$ ab \\
+	& \textbf{antikausal} & $y(t)$ hängt von zukünftigen $x(t + a)$ und momentanem $x(t)$ ab \\
+	& \textbf{nichtkausal} & $y(t)$ hängt von zukünftigen $x(t + a)$, aber nicht von momentanem $x(t)$ ab \\
+
+	\textbf{Zeitinvarianz} &
+	\textbf{zeitinvariant} & $y(t) = T(x(t)) \implies y(t-\tau)=T(x(t-\tau))$, d.h.
+	Systemverhalten unabhängig von Alter des Systems \\
+	& \textbf{zeitvariant} & Systemverhalten abhängig von Alter des Systems\\
+
+	\textbf{Linearität} &
+	\textbf{linear} & Superpositionsprinzip gilt, d.h.
+	\textbf{Homogenität} $T(ax(t)) = a ~ T(x(t))$ und
+	\textbf{Additivität} $T \left(\sum x_i(t) \right) = \sum T(x_i(t)$ sind erfüllt. Dies impliziert $T(0) = 0$. \\
+	& \textbf{nichtlinear} & Bedingungen treffen nicht zu \\
+
+	\textbf{Stabilität} &
+	\textbf{BIBO-stabil} & $\vert x(t)\vert\leq M_x <\infty \implies \vert y(t)\vert\leq M_y < \infty ~ \forall t, x(t)$, "Beschränktes Eingangssignal $\implies$ beschränktes Ausgangssignal." \\
+	& \textbf{instabil} & für beschränktes Eingangssignal ist unbeschränktes Ausgangssignal möglich
 \end{tabular}
-\paragraph*{Kausalität}
-\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
-	\textbf{kausal} & $y(t)$ hängt von vergangene $x(t+1)$ und momentane $x(t)$ ab, für alle $t$ und $x(t)$\\
-	\textbf{antikausal} & $y(t)$ hängt von zukünftige $x(t-1)$ und momentane $x(t)$ ab\\
-	\textbf{nichtkausal} & $y(t)$ hängt von zukünftige $x(t-1)$, aber nicht von momentane $x(t)$ ab\\
-\end{tabular}
-\raisebox{-.5\height}{\includegraphics[width=6cm]{img/ZeiteigenschaftenVonSystemen}}
-\paragraph*{Zeitinvarianz}
-\begin{tabular}{r >{\centering\arraybackslash} p{9cm}}
-	\textbf{zeitinvariant} & $y(t)=T(x(t))\Rightarrow y(t-\tau)=T(x(t-\tau))$ \\
-	& Systemverhalten unabhängig von "Alter" des Systems \\
-	\textbf{zeitvariant} & Systemverhalten abhängig von "Alter" des Systems\\
-\end{tabular}
-\paragraph*{Linearität}
-\begin{tabular}{r >{\centering\arraybackslash} p{6cm}}
-	\textbf{linear} & Superpositionsprinzip muss gelten:\\
-	& \textbf{homogen}: $T(ax(t))=aT(x(t))$\\
-	& \textbf{additiv}: $T(\sum x_i(t))=\sum T(x_i(t))$\\
-	& \textbf{durch Ursprung}: $T(0)=0$\\
-	\textbf{nichtlinear} & Bedingungen treffen nicht zu\\
-\end{tabular}
-\paragraph*{Stabilität}
-\begin{tabular}{r >{\centering\arraybackslash} p{12cm}}
-	\textbf{BIBO-stabil} & $\vert x(t)\vert\leq M_x <\infty\Rightarrow\vert y(t)\vert\leq M_y <\infty$ für alle $t$ und $x(t)$\\
-	& beschränktes Eingangssignal $\Rightarrow$ beschränktes Ausgangssignal\\
-	\textbf{instabil} & für Beschränktes Eingangssignal ist unbeschränktes Ausgangssignal möglich
-\end{tabular}
+\end{centering}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{img/ZeiteigenschaftenVonSystemen}
+\end{figure}
+
 \subsection*{Parallel- und Kettenschaltung von Systemen}
 \begin{itemize}
 	\item \textbf{Parallelschaltung} $y(t)=T_1(x(t))+T_2(x(t))+...+T_N(x(t))$
