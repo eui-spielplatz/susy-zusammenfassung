@@ -10,6 +10,7 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{float}
 \usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
@@ -567,4 +568,21 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 }
 \fancyformula{Parsevalsche Gleichung}{\[ \sum_{n=-\infty}^{\infty}x_1(n) ~ x_2^*(n) = \int_{2 \pi} X_1 \left(e^{j\omega} \right) ~ X_2^* \left(e^{j\omega} \right) ~ \frac{d\omega}{2\pi} \]}
 \end{multicols}
+\newpage
+\section*{Mathe}
+\fancythumb{Mathe}{Green}
+\subsection*{Additionstheoreme}
+\[\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\]
+\[\sin(\alpha - \beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)\]
+\[\cos(\alpha + \beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\]
+\[\cos(\alpha - \beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)\]
+\[\sin^2(\alpha)+\cos^2(\alpha)=1\]
+\[\sin^2(\alpha)-\cos^2(\alpha)=-\cos(2\alpha)\]
+\[\cos^2(\alpha)-\sin^2(\alpha)=\cos(2\alpha)\]
+\subsection*{Eulersche Formel}
+\[e^{ix}=cos(x)+i\sin(x)\]
+\[\sin(x)=\frac{e^{ix}-e^{-ix}}{2i} \qquad \cos(x)=\frac{e^{ix}+e^{-ix}}{2}\]
+\subsection*{Zusammenhang zwischen trigonometrischen Funktionen}
+\[\sin(x)=\cos\left(x-\frac{\pi}{2}\right) \qquad -\sin(x)=\cos\left(x+\frac{\pi}{2}\right)\]
+\[\cos(x)=\sin\left(x+\frac{\pi}{2}\right) \qquad -\cos(x)=\sin\left(x-\frac{\pi}{2}\right)\]
 \end{document}
