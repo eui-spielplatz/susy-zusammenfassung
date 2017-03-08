@@ -30,12 +30,14 @@
 }
 
 \newcommand{\ftransform}{
-	\xrightarrow{~\mathcal{F}~}
+	~\xrightarrow{~\mathcal{F}~}~
 }
 
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\rect}{rect}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
 
 \pagenumbering{arabic}
 \titleformat*{\section}{\sffamily\Large\bfseries}
@@ -468,6 +470,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \newpage
 
 \subsection*{Wichtige Fouriertransformationen}
+Seien $T>0$, $\Omega_g>0$.
 \begin{multicols}{2}
 	\small
 	\[ \delta(t) \ftransform 1 \]
@@ -483,17 +486,13 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 	\[ \rect \left(\frac{t}{T} \right) \ftransform 2 T ~ \sinc(\Omega T) \]
 	\[ \frac{\Omega_g}{\pi} ~ \sinc(\Omega_g t) \ftransform \rect \left( \frac{\Omega}{\Omega_g} \right) \]
 	\[ \left(1 - \frac{|t|}{T} \right) ~ \rect \left(\frac{t}{T} \right) \ftransform T ~ \sinc^2 \left( \frac{\Omega T}{2} \right) \]
-	\[ e^{-at}u(t) \ftransform \frac{1}{a+j\Omega},\quad Re(a)>0 \]
-	\[ \frac{t^{n-1}}{(n-1)!}e^{-at}u(t) \ftransform \frac{1}{(a+j\Omega)^n},\quad Re(a)>0 \]
-	\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad Re(a)>0\]
-	\[ e^{-a\lvert t \rvert}sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad Re(a)>0 \]
-	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad Re(a)>0 \]
+	\[ e^{-at} ~ u(t) \ftransform \frac{1}{a+j\Omega},\quad \Re(a)>0 \]
+	\[ \frac{t^{n-1}}{(n-1)!} ~ e^{-at}u(t) \ftransform \frac{1}{(a+j\Omega)^n},\quad \Re(a)>0 \]
+	\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad \Re(a)>0\]
+	\[ e^{-a\lvert t \rvert} ~ \sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad \Re(a)>0 \]
+	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad \Re(a)>0 \]
 	\[ \cos^2\left(\frac{\pi t}{2T}\right)~\rect\left(\frac{t}{T}\right) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
 \end{multicols}
-mit 
-\[ T>0, \qquad\Omega_g>0, \qquad f(x)o(x)=\left\{\begin{array}{@{}ll@{}}
-f(x) ~ &x\neq0\\ 0 ~ &x=0
-\end{array}\right. \]
 
 \newpage
 \section*{Fourierreihe zeitdiskreter Signale}
