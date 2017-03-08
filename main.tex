@@ -575,6 +575,31 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 }
 \fancyformula{Parsevalsche Gleichung}{\[ \sum_{n=-\infty}^{\infty}x_1(n) ~ x_2^*(n) = \int_{2 \pi} X_1 \left(e^{j\omega} \right) ~ X_2^* \left(e^{j\omega} \right) ~ \frac{d\omega}{2\pi} \]}
 \end{multicols}
+\subsection*{Wichtige zeitdiskrete Fouriertransformationen}
+\fancythumb{DTFT}{pink}
+\begin{multicols}{2}
+\[ \delta(n)\ftransform1 \]
+\[ \frac{1}{2\pi}\ftransform\eta(\omega) \]
+\[ \delta(n-n_0)\ftransform e^{j\omega n_0} \]
+\[ \frac{1}{2\pi}~e^{j\omega_0n}\ftransform\eta(\omega-\omega_0) \]
+\[ \cos(\omega_0n)\ftransform \pi[\eta(\omega-\omega_0)+\eta(\omega+\omega_0)] \]
+\[ \sin(\omega_0n) \ftransform\frac{\pi}{j}[\eta(\omega-\omega_0)-\eta(\omega+\omega_0)]\]
+\[ \rect\left(\frac{n}{N}\right) \ftransform\frac{sin[\omega(2N+1)/2]}{sin(\omega/2)}\]
+\[ \frac{\omega_g}{\pi} \sinc(\omega_gn) \ftransform \sum_{k=-\infty}^{\infty} \rect \left(\frac{\omega+2k\pi}{\omega_g}\right) \]
+\[ a^nu(n)\ftransform\frac{1}{1-a~e^{-j\omega}}, \quad |a|<1 \]
+\[ a^{|n|} \ftransform\frac{1-a^2}{1-2a~\cos(\omega+a^2)}, \quad |a|<1 \]
+\[ e^{-an}~u(n)\ftransform\frac{1}{1-e^{-(a+j\omega)}}, \quad Re(a)>0 \]
+\[ e^{-a|n|}\ftransform\frac{sinh(a)}{cosh(a)-cos(\omega)}, \quad Re(a)>0 \]
+\[ \eta(\omega)=\sum_{k=-\infty}^{\infty}\delta(\omega+2k\pi) \]
+\end{multicols}
+\newpage
+\section*{Abtasten zeitkontinuierlicher Signale}
+\fancythumb{Abtastung}{Brown}
+\subsection*{Nyquist-Shannon-Abtasttheorem}
+Die Abtastung eines zeitkontinuierlichen reellen Signals $x(t)$ ist genau dann eindeutig, wenn die Abtastfrequenz $f_{abtast}$ mehr als doppelt so groß ist, wie die maximale Frequenz $f_{max}$ von $x(t)$.
+\[ f_{abtast} > 2*f_{max} \]
+\subsection*{Aliasing}
+
 \newpage
 \section*{Mathe}
 \fancythumb{Mathe}{Green}
@@ -600,4 +625,5 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 \subsection*{Zusammenhang zwischen trigonometrischen Funktionen}
 \[\sin(x)=\cos\left(x-\frac{\pi}{2}\right) \qquad -\sin(x)=\cos\left(x+\frac{\pi}{2}\right)\]
 \[\cos(x)=\sin\left(x+\frac{\pi}{2}\right) \qquad -\cos(x)=\sin\left(x-\frac{\pi}{2}\right)\]
+
 \end{document}
