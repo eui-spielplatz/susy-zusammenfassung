@@ -207,15 +207,15 @@ Sei $a \in \mathbb R, a > 0$.
 \begin{tabular}{l p{12cm}}
 	\textbf{Impulsantwort} & Antwort $h(t)$ eines Systems auf die Anregung mit einer Dirac-Funktion $\delta(t)$ \\
 	\textbf{Sprungantwort} & Antwort $a(t)$ eines Systems auf die Anregung mit einer Sprungfunktion $u(t)$ \\
-	\textbf{Zusammenhang} & \vspace{-0.5cm}\[ a(t)=\int_{-\infty}^{t}h(\tau)d\tau, \qquad h(t)=\frac{da(t)}{dt} \]
+	\textbf{Zusammenhang} & \vspace{-0.5cm}\[ a(t)=\int_{-\infty}^{t}h(\tau)d\tau, \qquad h(t) = \frac{\mathrm da(t)}{\mathrm dt} \]
 \end{tabular}
 \vspace{-0.6cm}
 \subsubsection*{Überprüfung von Systemeigenschaften mit $h(t)$}
 \begin{tabular}{l p{12cm}}
 	\textbf{E1)} & System gedächtnislos $\Longleftrightarrow y(t) = c~x(t)$\\ & $\rightarrow$ keine Ableitungen $\frac{d}{dt}x(t)$ dürfen auftreten \[h(t)=c~\delta(t)\]\\
-	\textbf{E2)} & System kausal $\Longleftrightarrow h(t)=0 \quad \forall t<0$ bzw.\\ & \[y(t)=\int_{-\infty}^{\infty}h(\tau)x(t-\tau)d\tau=\int_{0}^{\infty}h(\tau)x(t-\tau)d\tau\] $\rightarrow$ nur in Vergangenheit, weil $\tau$ positiv.
-	\[=\int_{-\infty}^{t}x(\tau)h(t-\tau)d\tau\] \\
-	\textbf{E3)} & System BIBO-Stabil $\Longleftrightarrow \int_{-\infty}^{\infty}|h(t)|dt<\infty \quad \substack{\nleftarrow\\[-1em] \rightarrow}\quad h(t)\overset{t\rightarrow\infty}{\longrightarrow}0$
+	\textbf{E2)} & System kausal $\Longleftrightarrow h(t)=0 \quad \forall t<0$ bzw.\\ & \[y(t)=\int_{-\infty}^{\infty}h(\tau) ~ x(t-\tau) ~ \mathrm d\tau = \int_{0}^{\infty} h(\tau) ~ x(t-\tau) ~ \mathrm d\tau\] $\rightarrow$ nur in Vergangenheit, weil $\tau$ positiv.
+	\[=\int_{-\infty}^{t} ~ x(\tau)h(t-\tau) ~ \mathrm d\tau\] \\
+	\textbf{E3)} & System BIBO-Stabil $\Longleftrightarrow \int_{-\infty}^{\infty}|h(t)| \mathrm dt < \infty \quad \substack{\nleftarrow\\[-1em] \rightarrow}\quad h(t)\overset{t\rightarrow\infty}{\longrightarrow}0$
 \end{tabular}
 \subsection*{Faltung}
 \subsubsection*{Grafische Faltung}
@@ -236,9 +236,9 @@ Sei $a \in \mathbb R, a > 0$.
 \end{figure}
 \subsubsection*{Analytische Faltung}
 \subsubsection*{Definition}
-\[ (f \ast g)(t)=\int_\mathbb{R}f(\tau)\cdot g(t-\tau) d\tau \]
+\[ (f \ast g)(t)=\int_\mathbb{R}f(\tau) ~ g(t-\tau) ~ \mathrm d\tau \]
 Das Ausgangssignal $y(t)$ eines Systems ist das Eingangssignal $x(t)$ mit der Impulsantwort $h(t)$ gefaltet.
-\[ y(t) = (x \ast h)(t)=\int_\mathbb{R}x(\tau)\cdot h(t-\tau) d\tau\]
+\[ y(t) = (x \ast h)(t)=\int_\mathbb{R}x(\tau) ~ h(t-\tau) ~ \mathrm d\tau\]
 \subsubsection*{Eigenschaften}
 \begin{tabular}{l l p{12cm}}
 	\textbf{E1)}&\textbf{Kommutativ} & $(x \ast h)(t) = (h \ast x)(t)$\\
