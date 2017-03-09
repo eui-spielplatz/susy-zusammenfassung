@@ -48,7 +48,7 @@
 
 \begin{document}
 \section*{Klassifikation von Signale und Systeme}
-\fancythumb{Klass.}{teal}
+\fancythumb{Allgemein}{teal}
 \subsection*{Signal}
 Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsargument $t$ einen Funktionswert $x(t)$.
 \subsection*{Klassifikation von Signalen}
@@ -203,6 +203,19 @@ Sei $a \in \mathbb R, a > 0$.
 	\centering
 	\includegraphics[width=10cm]{img/Systemkettenschaltung}
 \end{figure}
+
+\subsection*{Dualität Fourieranalyse / -synthese}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{r l}
+	\textbf{Zeitbereich} & \textbf{Frequenzbereich} \\
+	$x(t)$ kontinuierlich und nichtperiodisch & $X(j\Omega)$ kontinuierlich und nichtperiodisch \\
+	$x(t)$ kontinuierlich und periodisch & $c_k$ diskret und nichtperiodisch \\
+	$x(n)$ diskret und nichtperiodisch & $X\left(e^{j\omega}\right)$ kontinuierlich und periodisch \\
+	$x(n)$ diskret und periodisch & $c_k$ diskret und periodisch
+\end{tabular}
+\end{table}
+
 \newpage
 \section*{Impulsantwort und Faltung}
 \fancythumb{Faltung}{red}
@@ -369,7 +382,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \]
 
 \section*{Fourierreihe zeitkontinuierlicher Signale}
-\fancythumb{FR}{blue}
+\fancythumb{FS}{blue}
 \subsection*{Definition}
 \[
 	x(t) = \sum_{k=-\infty}^\infty c_k ~ e^{jk\Omega t} = a_0 + \sum_{k=1}^\infty \left( a_k ~ \cos(k \Omega t) + b_k ~ \sin(k \Omega t) \right)
