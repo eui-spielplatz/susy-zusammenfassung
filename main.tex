@@ -13,7 +13,7 @@
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{float}
-\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\usepackage[left=2cm, right=2.50cm, top=2cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
 \usepackage[german]{babel}
 \usepackage[linewidth=1pt]{mdframed}
@@ -259,11 +259,10 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 \end{tabular}
 \end{center}
 
-\section*{Zeitdiskrete Faltung und Impulsantwort}
 \subsection*{Zeitdiskrete Impulsantwort und Sprungantwort}
+
 \subsection*{Zeitdiskrete Faltung}
-\subsubsection*{Grafische Faltung}
-\subsubsection*{Analytische Faltung}
+
 \subsubsection*{Definition}
 \[y(n) = (x \ast h)(n) = \sum_{i=-\infty}^{\infty}x(i)~h(n-i)\]
 \subsubsection*{Eigenschaften}
@@ -280,6 +279,18 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 		Wenn $x(n)$ & $=0, \quad \forall n<0$ & Länge $l_x$ & verschoben um $n_x$\\
 		und $h(n)$ & $=0, \quad \forall n<0$ & Länge $l_h$ & verschoben um $n_h$\\
 		dann $y(n)$ & $=0, \quad \forall n<0$ & Länge $l_x+l_h$ & verschoben um $n_x+n_h$\\
+	\end{tabular}
+\end{center}
+\subsubsection*{Beispiel zur Berechnung}
+\[x(n)=1,2,3,4\qquad\qquad h(t)=1,2,1\]
+\begin{center}
+	\centering
+	\begin{tabular}{l | c c c c c c}
+		$h(0)x(n)$ & 1 & 2 & 3 & 4 \\
+		$h(1)x(n-1)$ & & 2 & 4 & 6 & 8 \\
+		$h(2)x(n-2)$ & & & 1 & 2 & 3 & 4 \\
+		\hline
+		$y(t)=$ & 1 & 4 & 8 & 12 & 11 & 4 \\ 
 	\end{tabular}
 \end{center}
 \newpage
