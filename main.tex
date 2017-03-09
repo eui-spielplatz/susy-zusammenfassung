@@ -282,16 +282,14 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 \end{center}
 
 \subsection*{Zeitdiskrete Impulsantwort und Sprungantwort}
-
 \subsection*{Zeitdiskrete Faltung}
-
 \subsubsection*{Definition}
 \[y(n) = (x \ast h)(n) = \sum_{i=-\infty}^{\infty}x(i)~h(n-i)\]
 \subsubsection*{Eigenschaften}
 \begin{tabular}{l l p{12cm}}
 	\textbf{E1)} & \textbf{Kommutativ} & $(x \ast h)(n) = (h \ast x)(n)$\\
 	\textbf{E2)}&\textbf{Assoziativ} (Kettenschaltung) & $((x \ast h_1) \ast h_2)(n) = (x \ast (h_1 \ast h_2))(n)$\\
-	\textbf{E3)}&\textbf{Distributiv} (Parallelschaltung) & $((x \ast h_1)(t)+(x \ast h_2)(n) = (x \ast (h_1 + h_2))(n)$
+	\textbf{E3)}&\textbf{Distributiv} (Parallelschaltung) & $((x \ast h_1)(n)+(x \ast h_2)(n) = (x \ast (h_1 + h_2))(n)$
 \end{tabular}
 \begin{center}
 	\centering
@@ -308,9 +306,9 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 \begin{center}
 	\centering
 	\begin{tabular}{l | c c c c c c}
-		$h(0)x(n)$ & 1 & 2 & 3 & 4 \\
-		$h(1)x(n-1)$ & & 2 & 4 & 6 & 8 \\
-		$h(2)x(n-2)$ & & & 1 & 2 & 3 & 4 \\
+		$h(0) ~ x(n)$ & 1 & 2 & 3 & 4 \\
+		$h(1) ~ x(n-1)$ & & 2 & 4 & 6 & 8 \\
+		$h(2) ~ x(n-2)$ & & & 1 & 2 & 3 & 4 \\
 		\hline
 		$y(n)=$ & 1 & 4 & 8 & 12 & 11 & 4 \\ 
 	\end{tabular}
