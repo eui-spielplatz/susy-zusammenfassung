@@ -627,11 +627,34 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 \end{multicols}
 \newpage
 \section*{Abtasten zeitkontinuierlicher Signale}
+Das Signal $x_a(t)$ wird mit Abtastintervall $T_s$ und zugehöriger Abtastfrequenz $F_s = \frac{1}{T_S}$ zu $x(n)$ abgetastet:
+\[
+	x(n) := x_a(n ~ T_s)
+\]
+
 \fancythumb{Abtastung}{Brown}
-\subsection*{Nyquist-Shannon-Abtasttheorem}
-Die Abtastung eines zeitkontinuierlichen reellen Signals $x(t)$ ist genau dann eindeutig, wenn die Abtastfrequenz $f_{abtast}$ mehr als doppelt so groß ist, wie die maximale Frequenz $f_{max}$ von $x(t)$.
-\[ f_{abtast} > 2*f_{max} \]
+\subsection*{Abtasttheorem für $x_a(t), x(n) \in \mathbb C$}
+Für $F_s > B$, d.h. Abtastfrequenz ist größer als Bandbreite des Signals, lässt sich bei bekanntem Frequenzbereich das Signal $x_a(t) \in \mathbb C$ eindeutig aus $x(n) \in \mathbb C$ rekonstruieren.
+
+\subsection*{Normierte Frequenz für periodische Signale}
+Für $x_a(t)$ periodisch mit Periode $T$ und Frequenz $F$ wird die dimensionslose normierte Frequenz $f$ definiert zu
+\[
+	f = F \; T_S = \frac{F}{F_s} = \frac{T_S}{T}
+\]
+
+\subsection*{Abtasttheorem für $x_a(t), x(n) \in \mathbb R$}
+Für $x_a(t) \in \mathbb R$, d.h. $x(n) \in \mathbb R$ ist $X(j\Omega)$ und damit $X(e^{j\omega})$ gerade. Daraus folgt das Nyquist-Shannon-Abtasttheorem für relle Signale. Die Abtastung eines zeitkontinuierlichen reellen Signals $x(t)$ ist genau dann eindeutig, wenn die Abtastkreisfrequenz $\Omega_s$ mehr als doppelt so groß ist, wie die maximale Frequenz $\Omega_{max}$ in $x(t)$:
+\[ \Omega_s > 2 ~ \Omega_{max} \]
+
+\subsection*{Interpolation von $x_a(t)$ aus $x(n)$}
+Mit $x_a(t) \ftransform X(j\Omega)$ und $x_n(t) \ftransform X \left(e^{j\omega} \right)$ gilt $X(j\Omega) = H(j\Omega) ~ X(e^{j\omega})$, wobei $H(j\Omega)$ das ideale Tiefpassfilter $H(j\Omega) = T_S ~ \rect \left(\frac{\Omega}{\Omega_s / 2} \right)$ mit Grenzfrequenz $\Omega_s / 2$ darstellt. Alle anderen Interpolationen erfüllen die Bedingung der Frequenzbeschränktheit nicht.
+
 \subsection*{Aliasing}
+Für die Fouriertransformierte $X(e^{j\omega})$ des abgetasteten Signals $x(n)$ (d.h. $x(n) \ftransform X(e^{j\omega})$) gilt mit $x_a(t) \ftransform X_a(j\Omega)$:
+\[
+	X(e^{j\omega}) = \frac{1}{T_s} ~ \sum_{k=-\infty}^{\infty} X_a\left(j(\Omega + k \Omega_s) \right) ~~~ \textnormal{mit } \Omega_s = 2 \pi F_s
+\]
+Das heißt $X \left(e^{j\omega} \right)$ ist die $\Omega_s$-periodische Fortsetzung von $X_a(j\Omega)$, wobei Frequenzanteile mit $\Omega > \frac{\Omega_s}{2}$ im Grundfrequenzintervall aufaddiert werden. Somit kann $\Omega_a = k ~ \Omega_s + \Omega_0$ ($\Omega_0 < \frac{\Omega_s}{2}$, $k \in \mathbb Z$) nicht von $\Omega_0$ unterschieden werden.
 
 \newpage
 \section*{Mathe}
