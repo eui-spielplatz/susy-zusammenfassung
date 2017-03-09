@@ -215,7 +215,7 @@ Sei $a \in \mathbb R, a > 0$.
 \vspace{-0.6cm}
 \subsubsection*{Überprüfung von Systemeigenschaften mit $h(t)$}
 \begin{tabular}{l p{12cm}}
-	\textbf{E1)} & System gedächtnislos $\Longleftrightarrow y(t) = c~x(t)$\\ & $\rightarrow$ keine Ableitungen $\frac{d}{dt}x(t)$ dürfen auftreten \[h(t)=c~\delta(t)\]\\
+	\textbf{E1)} & System gedächtnislos $\Longleftrightarrow y(t) = c~x(t)$\\ & $\rightarrow$ keine Ableitungen $\frac{\mathrm d}{\mathrm dt}x(t)$ dürfen auftreten \[h(t)=c~\delta(t)\]\\
 	\textbf{E2)} & System kausal $\Longleftrightarrow h(t)=0 \quad \forall t<0$ bzw.\\ & \[y(t)=\int_{-\infty}^{\infty}h(\tau) ~ x(t-\tau) ~ \mathrm d\tau = \int_{0}^{\infty} h(\tau) ~ x(t-\tau) ~ \mathrm d\tau\] $\rightarrow$ nur in Vergangenheit, weil $\tau$ positiv.
 	\[=\int_{-\infty}^{t} ~ x(\tau) ~ h(t-\tau) ~ \mathrm d\tau\] \\
 	\textbf{E3)} & System BIBO-Stabil $\Longleftrightarrow \int_{-\infty}^{\infty} |h(t)| ~ \mathrm dt < \infty \quad \substack{\nleftarrow\\[-1em] \rightarrow}\quad h(t)\overset{t\rightarrow\infty}{\longrightarrow}0$
@@ -490,8 +490,8 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 \fancyformula{Dehnung}{
 \begin{align*}
-	x(at) &\ftransform \frac{1}{a}~X\bigg(j\frac{\Omega}{a}\bigg), a>0 \\
-	\frac{1}{a}~x\bigg(\frac{t}{a}\bigg) &\ftransform X(ja\Omega), a>0
+	x(at) &\ftransform \frac{1}{a}~X\bigg(j\frac{\Omega}{a}\bigg), ~ a > 0 \\
+	\frac{1}{a}~x\bigg(\frac{t}{a}\bigg) &\ftransform X(ja\Omega), ~ a > 0
 \end{align*}
 }
 \fancyformula{Differentiation}{
@@ -506,7 +506,7 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 \fancyformula{Moment}{
 \begin{align*}
-	\int_{-\infty}^{\infty}t^n x(t)dt &= j^n \frac{\mathrm d^nX(j\Omega)}{\mathrm d\Omega^n} \bigg|_{\Omega=0} \\
+	\int_{-\infty}^{\infty}t^n x(t) ~ \mathrm dt &= j^n \frac{\mathrm d^nX(j\Omega)}{\mathrm d\Omega^n} \bigg|_{\Omega=0} \\
 	\int_{-\infty}^{\infty}\Omega^n X(j\Omega) ~ \frac{\mathrm d\Omega}{2\pi}&=(-j)^n x^{(n)}(t) \bigg|_{t=0}
 \end{align*}	
 }
@@ -610,7 +610,7 @@ Somit ist $x(n)$ periodisch $\Longleftrightarrow a = \pi ~ q, ~ q \in \mathbb Q$
 }
 \fancyformula{Moment}{
 \begin{align*}
-	\sum_{n=-\infty}^{\infty} n^m ~ x(n) &= j^m \frac{d^m X \left(e^{j\omega} \right)}{d\omega^m} \bigg|_{\omega=0} \\
+	\sum_{n=-\infty}^{\infty} n^m ~ x(n) &= j^m \frac{\mathrm d^m X \left(e^{j\omega} \right)}{\mathrm d\omega^m} \bigg|_{\omega=0} \\
 	x(0) &= \int_{2\pi} X \left(e^{j\omega} \right) ~ \frac{\mathrm d\omega}{2\pi}
 \end{align*}	
 }
