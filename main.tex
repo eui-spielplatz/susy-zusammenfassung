@@ -60,7 +60,7 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 	 & damit: $x_r(t)=\frac{1}{2}(x(t)+x^*(t))$ und $x_i(t)=\frac{1}{2j}(x(t)-x^*(t))$\\
 	 \textbf{periodisch} & es existiert $T$, sodass $x(t+T)=x(t)$ für alle $t$\\
 	 & kleinstes $T$ heißt Periode\\
-	 \textbf{einkanalig} & 1 Funktionswerk, z.B. $x(t)$\\
+	 \textbf{einkanalig} & 1 Funktionswert, z.B. $x(t)$\\
 	 \textbf{mehrkanalig} & mehrere Funktionswerte, z.B.
 	$\begin{bmatrix}
 		x_1(t) \\ 
@@ -254,6 +254,30 @@ Wenn $x(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x$ & verschoben um $\tau_x$\\
 und $h(t)$ & $=0, \quad \forall t<0$ & Dauer $D_h$ & verschoben um $\tau_h$\\
 dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+\tau_h$\\
 \end{tabular}
+\end{center}
+
+\section*{Zeitdiskrete Faltung und Impulsantwort}
+\subsection*{Zeitdiskrete Impulsantwort und Sprungantwort}
+\subsection*{Zeitdiskrete Faltung}
+\subsubsection*{Grafische Faltung}
+\subsubsection*{Analytische Faltung}
+\subsubsection*{Definition}
+\[y(n) = (x \ast h)(n) = \sum_{i=-\infty}^{\infty}x(i)~h(n-i)\]
+\subsubsection*{Eigenschaften}
+\begin{tabular}{l l p{12cm}}
+	\textbf{E1)} & \textbf{Kommutativ} & $(x \ast h)(n) = (h \ast x)(n)$\\
+	\textbf{E2)}&\textbf{Assoziativ}(Kettenschaltung) & $((x \ast h_1) \ast h_2)(n) = (x \ast (h_1 \ast h_2))(n)$\\
+	\textbf{E3)}&\textbf{Distributiv}(Parallelschaltung) & $((x \ast h_1)(t)+(x \ast h_2)(n) = (x \ast (h_1 + h_2))(n)$
+\end{tabular}
+\begin{center}
+	\centering
+	\begin{tabular}{l | c | c | c |}
+		& \textbf{E4)}&\textbf{E5)}&\textbf{E6)}\\
+		\hline
+		Wenn $x(n)$ & $=0, \quad \forall n<0$ & Länge $l_x$ & verschoben um $n_x$\\
+		und $h(n)$ & $=0, \quad \forall n<0$ & Länge $l_h$ & verschoben um $n_h$\\
+		dann $y(n)$ & $=0, \quad \forall n<0$ & Länge $l_x+l_h$ & verschoben um $n_x+n_h$\\
+	\end{tabular}
 \end{center}
 \newpage
 
