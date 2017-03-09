@@ -111,7 +111,16 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 
 	\textbf{verschob. Rechteck} & $A ~ \rect \left(\dfrac{t-\frac{t_1+t_2}{2}}{\frac{t_2-t_1}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontVerschobenesRechteck}} \\
 
-	\textbf{Dreieck} & $A ~ \dfrac{t}{T} ~ \rect \left(\dfrac{t-\frac{T}{2}}{\frac{T}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontDreieck}} \\
+	\textbf{Dreiecksflanke} & $A ~ \dfrac{t}{T} ~ \rect \left(\dfrac{t-\frac{T}{2}}{\frac{T}{2}} \right)$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontDreieck}} \\
+
+	\textbf{Dreieckfunktion} &
+	{$\!\begin{aligned}
+		\rect(t) &= \begin{cases}
+		1-|t| & \text{für } |t| \leq 1\\
+		0 & \text{sonst}\\
+		\end{cases} \\
+	\end{aligned}$}
+	& \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitkontDreieckfunktion}} \\
 
 	\textbf{Impulsantwort} & $h(t) = T(\delta(t))$ \\
 	\textbf{Sprungantwort} & $a(t) = T(a(t))$
@@ -291,11 +300,11 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 		\hline
 		Wenn $x(n)$ & $=0, \quad \forall n<0$ & Länge $l_x$ & verschoben um $n_x$\\
 		und $h(n)$ & $=0, \quad \forall n<0$ & Länge $l_h$ & verschoben um $n_h$\\
-		dann $y(n)$ & $=0, \quad \forall n<0$ & Länge $l_x+l_h$ & verschoben um $n_x+n_h$\\
+		dann $y(n)$ & $=0, \quad \forall n<0$ & Länge $l_x+l_h -1$ & verschoben um $n_x+n_h$\\
 	\end{tabular}
 \end{center}
 \subsubsection*{Beispiel zur Berechnung}
-\[x(n)=1,2,3,4\qquad\qquad h(t)=1,2,1\]
+\[x(n)=1,2,3,4\qquad\qquad h(n)=1,2,1\]
 \begin{center}
 	\centering
 	\begin{tabular}{l | c c c c c c}
@@ -303,7 +312,7 @@ dann $y(t)$ & $=0, \quad \forall t<0$ & Dauer $D_x+D_h$ & verschoben um $\tau_x+
 		$h(1)x(n-1)$ & & 2 & 4 & 6 & 8 \\
 		$h(2)x(n-2)$ & & & 1 & 2 & 3 & 4 \\
 		\hline
-		$y(t)=$ & 1 & 4 & 8 & 12 & 11 & 4 \\ 
+		$y(n)=$ & 1 & 4 & 8 & 12 & 11 & 4 \\ 
 	\end{tabular}
 \end{center}
 \newpage
@@ -560,6 +569,7 @@ Seien $T>0$, $\Omega_g>0$.
 	\[ e^{-a\lvert t \rvert} ~ \sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad \Re(a)>0 \]
 	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad \Re(a)>0 \]
 	\[ \cos^2\left(\frac{\pi t}{2T}\right)~\rect\left(\frac{t}{T}\right) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
+	\[ \sinc^2\left(\frac{T~t}{2}\right) \ftransform 2\pi\left(1-\frac{|\Omega|}{T}\right)~\rect\left(\frac{\Omega}{T}\right) \]
 \end{multicols}
 
 \section*{Fourierreihe zeitdiskreter Signale}
