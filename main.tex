@@ -13,7 +13,7 @@
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{float}
-\usepackage[left=2cm, right=2.50cm, top=2cm, bottom=2.50cm]{geometry}
+\usepackage[left=2cm, right=2.60cm, top=2cm, bottom=2.50cm]{geometry}
 \usepackage[txtcentered=true, height=40pt, width=70pt]{thumbs}
 \usepackage[german]{babel}
 \usepackage[linewidth=1pt]{mdframed}
@@ -523,8 +523,8 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 \end{align*}	
 }
 \fancyformula{Integration}{
-	\[\int_{-\infty}^{t}x(\vartheta) ~ \mathrm d\vartheta \ftransform \frac{1}{j\Omega} X(j\Omega) o(\Omega)+\pi X(0)\delta(\Omega)\]
-	\[\frac{j}{t}x(t)o(t)+\pi x(0) \delta(t)  \ftransform \int_{-\infty}^{\Omega}X(j\sigma) ~ \mathrm d\sigma \]
+	\[\int_{-\infty}^{t}x(\tau) ~ \mathrm d\tau \ftransform \frac{1}{j\Omega}  ~ X(j\Omega) ~ o(\Omega) + \pi ~ X(0) ~ \delta(\Omega)\]
+	\[\frac{j}{t} ~ x(t) ~ o(t) + \pi ~ x(0) ~ \delta(t) \ftransform \int_{-\infty}^{\Omega} X(j\sigma) ~ \mathrm d\sigma \]
 }
 \fancyformula{Moment}{
 \begin{align*}
@@ -534,8 +534,8 @@ Da gilt $\delta(n) = u(n) - u(n - 1)$ folgt aus Linearität mit Systemoperator $
 }
 \fancyformula{Faltung}{
 \begin{align*}
-	(x_1 \ast x_2)(t) &\ftransform X_1(j\Omega)X_2(j\Omega)\\
-	x_1(t)x_2(t) &\ftransform \frac{1}{2\pi} (X_1 \ast X_2)(j\Omega)
+	(x_1 \ast x_2)(t) &\ftransform X_1(j\Omega) ~ X_2(j\Omega)\\
+	x_1(t)x_2(t) &\ftransform \frac{1}{2\pi} ~ (X_1 \ast X_2)(j\Omega)
 \end{align*}
 }
 \fancyformula{Parsevalsche Gleichung}{\[ \int_{-\infty}^{\infty} x_1(t) ~ x_2^*(t) ~ \mathrm dt = \int_{-\infty}^{\infty}X_1(j\Omega) ~ X_2^*(j\Omega) ~ \frac{\mathrm d\Omega}{2\pi} \]}
@@ -559,16 +559,16 @@ Seien $T>0$, $\Omega_g>0$.
 	\[ \sgn(t) \ftransform \frac{2}{j \Omega} ~ o(\Omega) \]
 	\[ \frac{j}{\pi t} ~ o(t) \ftransform \sgn(t) \]
 	\[ u(t) \ftransform \pi \delta(\Omega) + \frac{1}{j \Omega} ~ o(\Omega) \]
-	\[ \frac{1}{2} \delta(t) + \frac{j}{2 \pi t} ~ o(t) \ftransform u(\Omega) \]
+	\[ \frac{1}{2} ~ \delta(t) + \frac{j}{2 \pi t} ~ o(t) \ftransform u(\Omega) \]
 	\[ \rect \left(\frac{t}{T} \right) \ftransform 2 T ~ \sinc(\Omega T) \]
 	\[ \frac{\Omega_g}{\pi} ~ \sinc(\Omega_g t) \ftransform \rect \left( \frac{\Omega}{\Omega_g} \right) \]
 	\[ \left(1 - \frac{|t|}{T} \right) ~ \rect \left(\frac{t}{T} \right) \ftransform T ~ \sinc^2 \left( \frac{\Omega T}{2} \right) \]
 	\[ e^{-at} ~ u(t) \ftransform \frac{1}{a+j\Omega},\quad \Re(a)>0 \]
 	\[ \frac{t^{n-1}}{(n-1)!} ~ e^{-at}u(t) \ftransform \frac{1}{(a+j\Omega)^n},\quad \Re(a)>0 \]
-	\[ e^{-a\lvert t \rvert} \ftransform \frac{2a}{a^2+\Omega^2},\quad \Re(a)>0\]
-	\[ e^{-a\lvert t \rvert} ~ \sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad \Re(a)>0 \]
-	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/4a},\quad \Re(a)>0 \]
-	\[ \cos^2\left(\frac{\pi t}{2T}\right)~\rect\left(\frac{t}{T}\right) \ftransform \frac{\sin(\Omega T)}{\Omega[1-(\Omega T/\pi)^2]} \]
+	\[ e^{-a |t|} \ftransform \frac{2a}{a^2+\Omega^2},\quad \Re(a)>0\]
+	\[ e^{-a |t|} ~ \sgn(t) \ftransform -j\frac{2\Omega}{a^2+\Omega^2},\quad \Re(a)>0 \]
+	\[ e^{-at^2} \ftransform \sqrt{\frac{\pi}{a}}~e^{-\Omega^2/(4a)},\quad \Re(a)>0 \]
+	\[ \cos^2\left(\frac{\pi t}{2T}\right)~\rect\left(\frac{t}{T}\right) \ftransform \frac{\sin(\Omega T)}{\Omega ~ (1-(\Omega T/\pi)^2)} \]
 	\[ \sinc^2\left(\frac{T~t}{2}\right) \ftransform 2\pi\left(1-\frac{|\Omega|}{T}\right)~\rect\left(\frac{\Omega}{T}\right) \]
 \end{multicols}
 
