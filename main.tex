@@ -131,8 +131,8 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 \vspace{-3em}
 \begin{longtable}{r >{\centering\arraybackslash} p{7cm} l}
 	\textbf{Sprungfunktion} & $u(n)=\begin{cases}
-	1 & \text{für } n \geq 1\\
-	0 & \text{für } n < 1\\
+	1 & \text{für } n \geq 0\\
+	0 & \text{für } n < 0\\
 	\end{cases}$ & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskSprungfunktion}} \\
 
 	\textbf{Impulsfunktion} &
@@ -141,7 +141,7 @@ Ein Signal ist eine \textbf{Funktion} $x(t)$. Sie liefert für jedes Funktionsar
 			1 & \text{für } n = 0 \\
 			0 & \text{für } n \neq 0 \\
 		\end{cases} \\
-		&= u(t - 1) - u(t + 1)
+		&= u(n) - u(n - 1)
 	\end{aligned}$}
 	 & \raisebox{-.5\height}{\includegraphics[width=3cm]{img/zeitdiskImpulsfunktion}} \\
 	
