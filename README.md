@@ -1,11 +1,25 @@
-# SuSy-Zusammenfassung
+# Zusammenfassung "Signale und Systeme"
+## [PDF herunterladen](main.pdf)
+Formelsammlung zur Vorlesung "Signale und Systeme" an der Universität Stuttgart vom Wintersemester 2016 / 2017. Ideal als Übersichtsblatt für Prüfungen oder als Vorlage für eigene Zusammenfassungen.
 
-Inhalt:
+### Kompilieren
+Das Dokument ist in Latex geschrieben. Zum Kompilieren kann folgender Befehl im Wurzelverzeichnis dieses Repositories ausgeführt werden:
+```bash
+pdflatex main.tex
+```
 
-1. Signale und Systeme
-2. Zeitkont. LTI-Systeme im Zeitbereich
-3. Zeitdiskrete LTI-Systeme im Zeitbereich
-4. Fourier-Analyse zeitkont. Signale und LTI-Systeme
-5. Fourier-Analyse zeitdiskreter Signale und LTI-Systeme
-6. Analyse von Signalen und LTI-Systemen in der komplexen Ebene
-7. Allgemeinere Signale und Systeme
+Alternativ kann das fertige Dokument auch direkt unter obigem Link heruntergeladen werden.
+
+### Inhalt
+* Klassifikation von Signalen und Systemen
+* Impulsantwort und Faltung
+* Differenzengleichungen
+* Fourierreihe zeitkontinuierlicher Signale
+* Fouriertransformation zeitkontinuierlicher Signale
+* Fourierreihe zeitdiskreter Signale
+* Fouriertransformation zeitdiskreter Signale
+* Abtasten zeitkontinuierlicher Signale
+* Kleine Mathematik-Formelsammlung
+
+### Mitmachen
+Ergänzungen in Form vom Pull Requests sind jederzeit willkommen!
